@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#050505">
+
+    <title>STACKLY | Desktop Collection</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.27/dist/lenis.css">
+   <link rel="stylesheet" href="lenis.css">
+    <link rel="stylesheet" href="loader.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="desktop.css">
+</head>
+
+<body>
+
+    <div id="stacklyLoader" class="stackly-loader">
+
+        <div class="loader-background-glow"></div>
+
+        <div class="loader-content">
+
+            <div class="loader-orbit orbit-one"><span class="orbit-point"></span></div>
+            <div class="loader-orbit orbit-two"><span class="orbit-point"></span></div>
+            <div class="loader-orbit orbit-three"></div>
+
+            <div class="loader-logo-container">
+                <div class="loader-logo-glow"></div>
+                <img src="Assets/blacklogo.webp" alt="STACKLY" class="loader-logo">
+                <div class="loader-logo-scan"></div>
+            </div>
+
+            <div class="loader-brand-caption">
+                <span class="caption-line"></span>
+                <span>COMPUTER STORE</span>
+                <span class="caption-line"></span>
+            </div>
+
+            <div class="loader-tagline">POWERING YOUR DIGITAL WORLD</div>
+
+            <div class="loader-progress-container">
+                <div class="loader-progress-track">
+                    <div class="loader-progress-fill" id="loaderProgress"></div>
+                </div>
+                <div class="loader-progress-info">
+                    <span id="loaderStatus">INITIALIZING SYSTEM</span>
+                    <span id="loaderPercentage">0%</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="loader-bottom-text">STACKLY <span>TECHNOLOGY</span></div>
+
+    </div>
+
+
+    <header class="stackly-header">
+
+        <nav class="navbar navbar-expand-xl navbar-dark">
+
+            <div class="container-fluid header-container">
+
+                <a class="navbar-brand stackly-logo" href="index.html">
+                    <img src="Assets/blacklogo.webp" alt="Stackly Logo">
+                </a>
+
+                <div class="collapse navbar-collapse desktop-navigation">
+
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">ABOUT US</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="desktop.html">DESKTOP</a></li>
+                        <li class="nav-item"><a class="nav-link" href="laptop.html">LAPTOPS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+                    </ul>
+
+                    <div class="header-actions d-flex align-items-center">
+
+                        <form class="header-search" role="search" action="error.html" method="get">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="search" name="search" placeholder="Search masterpiece..." aria-label="Search products" required>
+                            <button type="submit" class="visually-hidden">Search</button>
+                        </form>
+
+                        <a href="cart.html" class="header-action cart-action" aria-label="Shopping cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="cart-badge">0</span>
+                        </a>
+
+                        <a href="login.html" class="header-action" aria-label="My account">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="mobile-header-actions d-flex align-items-center ms-auto">
+
+                    <a href="cart.html" class="mobile-cart" aria-label="Shopping cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="cart-badge">0</span>
+                    </a>
+
+                    <button class="navbar-toggler mobile-menu-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#stacklyMobileMenu" aria-controls="stacklyMobileMenu" aria-label="Open navigation menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <div class="offcanvas offcanvas-end stackly-offcanvas" tabindex="-1" id="stacklyMobileMenu" aria-labelledby="mobileMenuLabel">
+
+        <div class="offcanvas-header drawer-header">
+            <a href="index.html" class="drawer-logo">
+                <img src="Assets/blacklogo.webp" alt="Stackly Logo">
+            </a>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close menu"></button>
+        </div>
+
+        <div class="offcanvas-body">
+
+            <form class="header-search" role="search" action="error.html" method="get">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" name="search" placeholder="Search masterpiece..." aria-label="Search products" required>
+                <button type="submit" class="visually-hidden">Search</button>
+            </form>
+
+            <nav class="mobile-navigation">
+                <br>
+                <a href="index.html" class="mobile-nav-link"><span>HOME</span><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="about.html" class="mobile-nav-link"><span>ABOUT US</span><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="laptop.html" class="mobile-nav-link"><span>LAPTOPS</span><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="desktop.html" class="mobile-nav-link active"><span>DESKTOP</span><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="contact.html" class="mobile-nav-link"><span>CONTACT</span><i class="fa-solid fa-arrow-right"></i></a>
+            </nav>
+
+            <div class="mobile-account-links">
+                <a href="login.html">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Login</span>
+                </a>
+                <a href="cart.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Shopping Cart</span>
+                    <span class="mobile-cart-badge">0</span>
+                </a>
+            </div>
+
+            <div class="drawer-footer">
+                <p>STACKLY PREMIUM COMPUTERS</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <main>
+
+        <section class="stackly-desktop-hero" id="desktop-hero">
+
+            <div class="desktop-hero-image-wrap">
+                <img src="Assets/lap2.webp" alt="STACKLY Master Series premium gaming desktop" class="desktop-hero-image" fetchpriority="high">
+                <div class="desktop-hero-overlay"></div>
+                <div class="desktop-hero-glow"></div>
+            </div>
+
+            <div class="desktop-hero-container">
+
+                <div class="desktop-hero-content">
+
+                    <div class="desktop-availability">
+                        <span class="availability-dot"></span>
+                        LIMITED COLLECTION
+                        <span class="availability-divider"></span>
+                        SERIES / 2026
+                    </div>
+
+                    <div class="desktop-hero-kicker">ENGINEERED FOR THE EXTRAORDINARY</div>
+
+                    <h1 class="desktop-hero-title">
+                        Master Series
+                        <span><em>Collection.</em></span>
+                    </h1>
+
+                    <p class="desktop-hero-description">
+                        Engineered for the most demanding workloads. Discover the perfect fusion of architectural design, precision engineering and uncompromising computational power.
+                    </p>
+
+                    <div class="desktop-hero-highlights">
+
+                        <div class="desktop-highlight">
+                            <span class="desktop-highlight-icon"><i class="fa-solid fa-microchip"></i></span>
+                            <div><strong>Extreme Performance</strong><span>Power without limits</span></div>
+                        </div>
+
+                        <div class="desktop-highlight">
+                            <span class="desktop-highlight-icon highlight-purple"><i class="fa-solid fa-wind"></i></span>
+                            <div><strong>Precision Cooling</strong><span>Designed for stability</span></div>
+                        </div>
+
+                        <div class="desktop-highlight">
+                            <span class="desktop-highlight-icon highlight-teal"><i class="fa-solid fa-gem"></i></span>
+                            <div><strong>Premium Craft</strong><span>Detail in every component</span></div>
+                        </div>
+
+                    </div>
+
+                    <div class="desktop-hero-actions">
+                        <a href="#desktop-shop" class="desktop-primary-btn">
+                            <span>EXPLORE COLLECTION</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="error.html" class="desktop-secondary-btn">
+                            <i class="fa-solid fa-sliders"></i>
+                            CONFIGURE YOUR BUILD
+                        </a>
+                    </div>
+
+                    <div class="desktop-hero-note">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        BUILT WITH PRECISION. TESTED FOR PERFORMANCE.
+                    </div>
+
+                </div>
+
+                <div class="desktop-hero-side">
+
+                    <div class="desktop-series-card">
+
+                        <div class="series-card-top">
+                            <span>MASTER SERIES</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+
+                        <div class="series-card-visual">
+                            <div class="series-orbit orbit-a"></div>
+                            <div class="series-orbit orbit-b"></div>
+                            <div class="series-chip"><i class="fa-solid fa-microchip"></i></div>
+                        </div>
+
+                        <div class="series-card-bottom">
+                            <div>
+                                <span>COLLECTION</span>
+                                <strong>01 / SIGNATURE</strong>
+                            </div>
+                            <span class="series-card-status"><i class="fa-solid fa-circle"></i> PREMIUM</span>
+                        </div>
+
+                    </div>
+
+                    <div class="desktop-floating-tag">
+                        <span class="floating-tag-icon"><i class="fa-solid fa-star"></i></span>
+                        <div>
+                            <strong>Masterfully Engineered</strong>
+                            <span>Performance meets perfection</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="desktop-hero-bottom">
+
+                    <div class="desktop-bottom-item">
+                        <span class="desktop-bottom-number">01</span>
+                        <span>ARCHITECTURAL DESIGN</span>
+                    </div>
+
+                    <div class="desktop-bottom-line"></div>
+
+                    <div class="desktop-bottom-item">
+                        <span class="desktop-bottom-number">02</span>
+                        <span>ADVANCED COMPUTING</span>
+                    </div>
+
+                    <div class="desktop-bottom-line"></div>
+
+                    <div class="desktop-bottom-item">
+                        <span class="desktop-bottom-number">03</span>
+                        <span>INDIVIDUAL CRAFTSMANSHIP</span>
+                    </div>
+
+                    <a href="#desktop-shop" class="desktop-bottom-link">
+                        DISCOVER THE DIFFERENCE
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="desktop-hero-corner corner-top-left"></div>
+            <div class="desktop-hero-corner corner-bottom-right"></div>
+
+        </section>
+
+
+        <section class="stackly-shop" id="desktop-shop">
+
+            <div class="shop-container">
+
+                <div class="shop-heading">
+
+                    <div>
+                        <span class="shop-eyebrow"><span></span>THE STACKLY COLLECTION</span>
+
+                        <h2>Discover Your <em>Masterpiece.</em></h2>
+
+                        <p>Explore precision-engineered desktop systems designed for creators, gamers and professionals.</p>
+                    </div>
+
+                    <div class="shop-heading-badge">
+                        <i class="fa-solid fa-microchip"></i>
+                        <span>DESKTOP COLLECTION</span>
+                    </div>
+
+                </div>
+
+
+                <div class="shop-trust">
+                    <div><i class="fa-solid fa-truck-fast"></i><span><strong>Free delivery</strong>Across India</span></div>
+                    <div><i class="fa-solid fa-shield-halved"></i><span><strong>3-year warranty</strong>On every system</span></div>
+                    <div><i class="fa-solid fa-rotate-left"></i><span><strong>7-day replacement</strong>No questions asked</span></div>
+                    <div><i class="fa-solid fa-headset"></i><span><strong>Expert support</strong>Real engineers</span></div>
+                </div>
+
+
+                <div class="shop-toolbar">
+
+                    <div class="shop-result-info">
+                        <span id="shopResultCount">6 PRODUCTS</span>
+                        <span class="shop-result-dot"></span>
+                        <span>MASTER SERIES</span>
+                    </div>
+
+                    <div class="shop-toolbar-actions">
+
+                        <button type="button" class="shop-filter-mobile-btn" id="shopFilterOpen">
+                            <i class="fa-solid fa-sliders"></i>
+                            FILTERS
+                        </button>
+
+                        <div class="shop-sort">
+                            <label for="shopSort">SORT BY</label>
+                            <select id="shopSort">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Top Rated</option>
+                                <option value="name">Name: A to Z</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="shop-layout">
+
+                    <div class="shop-sidebar-overlay" id="shopSidebarOverlay"></div>
+
+                    <aside class="shop-sidebar" id="shopSidebar">
+
+                        <div class="shop-sidebar-header">
+                            <div>
+                                <span class="shop-sidebar-kicker">REFINE YOUR SEARCH</span>
+                                <h3>Filters</h3>
+                            </div>
+                            <button type="button" id="shopFilterClose" aria-label="Close filters">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+
+                        <div class="shop-filter-section">
+
+                            <div class="shop-filter-title">
+                                <h4>Categories</h4>
+                                <i class="fa-solid fa-chevron-up"></i>
+                            </div>
+
+                            <label class="shop-check">
+                                <input type="checkbox" value="Gaming" name="categoryFilter">
+                                <span class="custom-check"></span>
+                                Gaming Systems
+                                <span class="filter-count">02</span>
+                            </label>
+
+                            <label class="shop-check">
+                                <input type="checkbox" value="Workstation" name="categoryFilter">
+                                <span class="custom-check"></span>
+                                Workstations
+                                <span class="filter-count">02</span>
+                            </label>
+
+                            <label class="shop-check">
+                                <input type="checkbox" value="Creator" name="categoryFilter">
+                                <span class="custom-check"></span>
+                                Creator PCs
+                                <span class="filter-count">01</span>
+                            </label>
+
+                            <label class="shop-check">
+                                <input type="checkbox" value="Performance" name="categoryFilter">
+                                <span class="custom-check"></span>
+                                Performance PCs
+                                <span class="filter-count">01</span>
+                            </label>
+
+                        </div>
+
+                        <div class="shop-filter-section">
+
+                            <div class="shop-filter-title">
+                                <h4>Price Range</h4>
+                                <i class="fa-solid fa-chevron-up"></i>
+                            </div>
+
+                            <div class="shop-price-display">
+                                <div>
+                                    <span>UP TO</span>
+                                    <strong id="shopPriceValue">₹3,00,000</strong>
+                                </div>
+                                <span class="shop-price-currency">INR</span>
+                            </div>
+
+                            <input type="range" id="shopPriceRange" min="60000" max="300000" step="5000" value="300000" aria-label="Maximum price">
+
+                            <div class="shop-price-limits">
+                                <span>₹60,000</span>
+                                <span>₹3,00,000</span>
+                            </div>
+
+                        </div>
+
+                        <div class="shop-filter-section">
+
+                            <div class="shop-filter-title">
+                                <h4>Availability</h4>
+                                <i class="fa-solid fa-chevron-up"></i>
+                            </div>
+
+                            <label class="shop-check">
+                                <input type="checkbox" id="shopStockFilter">
+                                <span class="custom-check"></span>
+                                In Stock Only
+                            </label>
+
+                        </div>
+
+                        <div class="shop-filter-section">
+
+                            <div class="shop-filter-title">
+                                <h4>Quick Search</h4>
+                            </div>
+
+                            <div class="shop-sidebar-search">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="search" id="shopSearch" placeholder="Find your desktop..." aria-label="Search desktops">
+                            </div>
+
+                        </div>
+
+                        <button type="button" class="shop-clear-filters" id="shopReset">
+                            <i class="fa-solid fa-rotate-left"></i>
+                            CLEAR ALL FILTERS
+                        </button>
+
+                        <div class="shop-sidebar-note">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <div>
+                                <strong>STACKLY QUALITY</strong>
+                                <span>Precision-built systems, designed around your performance.</span>
+                            </div>
+                        </div>
+
+                    </aside>
+
+
+                    <div class="shop-main">
+
+                        <div class="shop-active-filters" id="shopActiveFilters"></div>
+
+                        <div class="shop-products-grid" id="desktopProductsGrid"></div>
+
+                        <div class="shop-empty-state" id="shopEmptyState" hidden>
+
+                            <div class="shop-empty-icon"><i class="fa-solid fa-microchip"></i></div>
+
+                            <h3>No systems found</h3>
+
+                            <p>Try adjusting your filters to discover more desktop systems.</p>
+
+                            <button type="button" id="shopEmptyReset">
+                                RESET FILTERS
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+                        <nav class="shop-pagination" id="shopPagination" aria-label="Product pagination">
+
+    <div class="pagination-info">
+        PAGE <strong>01</strong> OF <strong>02</strong>
+    </div>
+
+    <div class="pagination-controls">
+
+        <span class="pagination-arrow disabled" aria-disabled="true">
+            <i class="fa-solid fa-chevron-left"></i>
+        </span>
+
+        <a href="desktop.html" class="pagination-number active" aria-current="page">
+            1
+        </a>
+
+        <a href="error.html" class="pagination-number">
+            2
+        </a>
+
+        <a href="error.html" class="pagination-next">
+            NEXT
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</nav>
+
+                        <div class="shop-bottom-info">
+                            <span class="shop-bottom-line"></span>
+                            <span>ENGINEERED FOR YOUR NEXT GREAT IDEA</span>
+                            <span class="shop-bottom-line"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div class="pd-modal" id="pdModal" hidden role="dialog" aria-modal="true" aria-labelledby="pdTitle">
+            <div class="pd-backdrop" data-close-details></div>
+            <div class="pd-dialog" id="pdDialog">
+                <button type="button" class="pd-close" data-close-details aria-label="Close details">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="pd-body" id="pdBody"></div>
+            </div>
+        </div>
+
+
+        <div class="shop-toast" id="shopToast" role="status" aria-live="polite">
+            <span class="shop-toast-icon"><i class="fa-solid fa-check" id="shopToastIcon"></i></span>
+            <div>
+                <strong id="shopToastTitle">Added to cart</strong>
+                <span id="shopToastMessage">Your product has been added.</span>
+            </div>
+            
+        </div>
+
+      
+  <footer class="stackly-footer" id="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-grid">
+
+           
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="footer-logo">
+                    <img src="Assets/blacklogo.webp" alt="STACKLY Logo">
+                </a>
+
+                <p class="footer-description">
+                    Hand-crafting the most powerful personal computers
+                    on Earth. Designed for creators, innovators and
+                    professionals who demand extraordinary performance.
+                </p>
+
+                <div class="footer-socials">
+
+                    <a href="error.html" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="error.html" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="error.html" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                    <a href="error.html" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h3>QUICK LINKS</h3>
+
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="about.html">About Us</a></li>
+
+                    <li><a href="desktop.html">Desktop</a></li>
+
+                    <li><a href="laptop.html">Laptops</a></li>
+
+                    <li><a href="cart.html">Cart</a></li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+
+          
+
+            <div class="footer-column">
+
+                <h3>SUPPORT</h3>
+
+                <ul>
+
+                    <li><a href="error.html">Concierge Desk</a></li>
+
+                    <li><a href="error.html">Warranty Registry</a></li>
+
+                    <li><a href="error.html">Repairs</a></li>
+
+                    <li><a href="error.html">Knowledge Base</a></li>
+
+                    <li><a href="error.html">Order Tracking</a></li>
+
+                    <li><a href="error.html">Technical Support</a></li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>COMPANY</h3>
+
+                <ul>
+
+                    <li><a href="error.html">Our Story</a></li>
+
+                    <li><a href="error.html">Sustainability</a></li>
+
+                    <li><a href="error.html">Careers</a></li>
+
+                    <li><a href="error.html">Press</a></li>
+
+                    <li><a href="error.html">Privacy Policy</a></li>
+
+                    <li><a href="error.html">Terms of Service</a></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="footer-copyright">
+                <span>&copy; 2026 STACKLY.</span>
+                <span>ALL RIGHTS RESERVED.</span>
+            </div>
+
+            <div class="footer-bottom-center">
+                <span class="footer-status-dot"></span>
+                CRAFTED FOR THE EXTRAORDINARY
+            </div>
+
+            <a href="#home" class="footer-back-top">
+                BACK TO TOP
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+    </main>
+    
+
+    <canvas id="stacklySmokeCanvas"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.9.3/confetti.browser.min.js"></script>
+      <script src="https://unpkg.com/lenis@1.3.27/dist/lenis.min.js"></script>
+     <script src="lenis.js"></script>
+    <script src="loader.js"></script>
+    <script src="nav.js"></script>
+    <script src="cursor.js"></script>
+    <script src="desktop.js"></script>
+
+</body>
+
+</html>

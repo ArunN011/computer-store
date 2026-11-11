@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#17151a">
+
+    <title>Stackly | Admin Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="admin-dashboard.css">
+</head>
+
+<body>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="admin-sidebar" id="adminSidebar">
+
+        <div class="sidebar-brand">
+
+            <a href="admin-dashboard.html" class="brand-link">
+
+                <img src="Assets/blacklogo.webp"
+                     alt="Stackly Computer Store"
+                     class="sidebar-logo">
+
+                
+
+            </a>
+
+            <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+        </div>
+
+
+        <div class="sidebar-account">
+
+            <div class="account-avatar" id="sidebarAvatar">
+                A
+            </div>
+
+            <div class="account-details">
+
+                <strong id="sidebarName">Administrator</strong>
+
+                <span id="sidebarEmail">Loading account...</span>
+
+            </div>
+
+            <span class="online-indicator"></span>
+
+        </div>
+
+
+        <div class="sidebar-menu-wrapper">
+
+            <span class="sidebar-heading">WORKSPACE</span>
+
+            <nav class="sidebar-navigation">
+
+                <button class="nav-item active" data-view="dashboard">
+
+                    <i class="bi bi-grid-1x2"></i>
+
+                    <span>Dashboard</span>
+
+                </button>
+
+
+                <button class="nav-item" data-view="products">
+
+                    <i class="bi bi-laptop"></i>
+
+                    <span>Products</span>
+
+                </button>
+
+
+                <button class="nav-item" data-view="orders">
+
+                    <i class="bi bi-bag-check"></i>
+
+                    <span>Orders</span>
+
+                    <span class="nav-count" id="sidebarOrderCount">0</span>
+
+                </button>
+
+
+                <button class="nav-item" data-view="customers">
+
+                    <i class="bi bi-people"></i>
+
+                    <span>Customers</span>
+
+                </button>
+                <button class="nav-item" data-view="tracking">
+    <i class="bi bi-geo-alt"></i>
+    <span>Shipment Tracking</span>
+</button>
+
+            </nav>
+
+
+            <div class="sidebar-promo">
+
+                <div class="promo-symbol">
+                    <i class="bi bi-stars"></i>
+                </div>
+
+                <span class="promo-label">STACKLY INSIGHTS</span>
+
+                <h3>Intelligence for your business.</h3>
+
+                <p>
+                    Manage your inventory, customers and store performance
+                    from one workspace.
+                </p>
+
+                <a href="error.html" class="promo-link">
+                    Explore insights
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-bottom-line"></div>
+
+            <button class="nav-item logout-item" id="logoutBtn">
+
+                <i class="bi bi-box-arrow-left"></i>
+
+                <span>Logout</span>
+
+            </button>
+
+            <span class="sidebar-version">
+                STACKLY ADMIN PANEL · V1.0
+            </span>
+
+        </div>
+
+    </aside>
+
+
+    <div class="main-wrapper" id="mainWrapper">
+
+
+        <!-- MOBILE HEADER -->
+
+        <header class="mobile-header">
+
+            <button class="mobile-menu-btn"
+                    id="hamburgerBtn"
+                    aria-label="Open navigation"
+                    aria-controls="adminSidebar"
+                    aria-expanded="false">
+
+                <i class="bi bi-list"></i>
+
+            </button>
+
+
+            <a href="admin-dashboard.html" class="mobile-brand">
+
+                <img src="Assets/blacklogo.webp"
+                     alt="Stackly Computer Store"
+                     class="mobile-logo">
+
+            </a>
+
+        </header>
+
+
+        <!-- DESKTOP HEADER -->
+
+        <header class="desktop-header">
+
+            <div class="header-left">
+
+                <div class="header-date">
+                    <i class="bi bi-calendar3"></i>
+                    <span id="currentDate"></span>
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <div class="header-search">
+
+                    <i class="bi bi-search"></i>
+
+                    <input type="text"
+                           id="globalSearch"
+                           placeholder="Search anything...">
+
+                    <span>CTRL K</span>
+
+                </div>
+
+
+                <button class="header-icon-btn" id="notificationBtn" aria-label="Notifications">
+
+                    <i class="bi bi-bell"></i>
+
+                    <span class="notification-indicator"></span>
+
+                </button>
+
+
+                <div class="header-profile dropdown">
+
+                    <button class="profile-toggle dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+
+                        <div class="profile-avatar" id="topAvatar">
+                            A
+                        </div>
+
+                        <div class="profile-text">
+
+                            <strong id="topAdminName">Administrator</strong>
+
+                            <span id="topAdminEmail">admin@stackly.com</span>
+
+                        </div>
+
+                    </button>
+
+
+                    <ul class="dropdown-menu dropdown-menu-end profile-dropdown-menu">
+
+                        <li>
+                            <button class="dropdown-item" data-view-target="dashboard">
+                                <i class="bi bi-grid"></i>
+                                Dashboard
+                            </button>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <button class="dropdown-item text-danger" id="topLogoutBtn">
+                                <i class="bi bi-box-arrow-right"></i>
+                                Logout
+                            </button>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <main class="dashboard-content">
+
+
+            <!-- DASHBOARD VIEW -->
+
+            <section class="content-view active" id="dashboardView">
+
+                <div class="page-heading" data-aos="fade-up">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            <span class="eyebrow-line"></span>
+                            ADMINISTRATION
+                        </span>
+
+                        <h1>Dashboard <span>Overview.</span></h1>
+
+                        <p>
+                            Welcome back,
+                            <strong id="welcomeEmail">Administrator</strong>.
+                            Here's what's happening with your store.
+                        </p>
+
+                    </div>
+
+
+                    <div class="page-actions">
+
+                        <button class="outline-btn" id="refreshDashboard">
+
+                            
+
+                            <i class="bi bi-arrow-clockwise"></i>
+
+                            Refresh
+
+                        </button>
+
+                        <button class="gold-btn" id="exportDashboard">
+
+                            <i class="bi bi-download"></i>
+
+                            Export Report
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- HERO -->
+
+                <section class="admin-hero" data-aos="fade-up">
+
+                    <div class="hero-content">
+
+                        <span class="hero-label">
+                            <i class="bi bi-stars"></i>
+                            YOUR STORE AT A GLANCE
+                        </span>
+
+                        <h2>
+                            Where technology<br>
+                            meets <em>possibility.</em>
+                        </h2>
+
+                        <p>
+                            Every product, every customer and every order.
+                            Your entire business, beautifully managed in one place.
+                        </p>
+
+                        <button class="hero-button" data-view-target="products">
+
+                            Explore Products
+
+                            <i class="bi bi-arrow-up-right"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="hero-art">
+
+                        <div class="hero-orbit orbit-one"></div>
+                        <div class="hero-orbit orbit-two"></div>
+
+                        <div class="hero-image-frame">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=85"
+                                alt="Premium laptop">
+
+                        </div>
+
+                        <div class="hero-floating-card">
+
+                            <i class="bi bi-graph-up-arrow"></i>
+
+                            <div>
+                                <span>Store performance</span>
+                                <strong>Growing steadily</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="hero-gold-circle"></div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- STATISTICS -->
+
+                <section class="statistics-grid">
+
+
+                    <div class="stat-card" data-aos="fade-up">
+
+                        <div class="stat-heading">
+
+                            <span>Total Revenue</span>
+
+                            <div class="stat-icon purple-icon">
+                                <i class="bi bi-currency-rupee"></i>
+                            </div>
+
+                        </div>
+
+                        <h3 id="totalRevenue">₹0</h3>
+
+                        <div class="stat-footer">
+                            <span class="stat-caption">From recorded orders</span>
+                            <span class="stat-period">LIVE DATA</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+
+                        <div class="stat-heading">
+
+                            <span>Total Orders</span>
+
+                            <div class="stat-icon gold-icon">
+                                <i class="bi bi-bag-check"></i>
+                            </div>
+
+                        </div>
+
+                        <h3 id="totalOrders">0</h3>
+
+                        <div class="stat-footer">
+                            <span class="stat-caption">All recorded orders</span>
+                            <span class="stat-period">ORDERS</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+
+                        <div class="stat-heading">
+
+                            <span>Total Products</span>
+
+                            <div class="stat-icon purple-icon">
+                                <i class="bi bi-laptop"></i>
+                            </div>
+
+                        </div>
+
+                        <h3 id="totalProducts">0</h3>
+
+                        <div class="stat-footer">
+                            <span class="stat-caption">Store catalogue</span>
+                            <span class="stat-period">PRODUCTS</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+
+                        <div class="stat-heading">
+
+                            <span>Total Customers</span>
+
+                            <div class="stat-icon gold-icon">
+                                <i class="bi bi-people"></i>
+                            </div>
+
+                        </div>
+
+                        <h3 id="totalCustomers">0</h3>
+
+                        <div class="stat-footer">
+                            <span class="stat-caption">Registered customers</span>
+                            <span class="stat-period">CUSTOMERS</span>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- CHARTS -->
+
+                <section class="charts-grid">
+
+                    <div class="surface-card sales-card" data-aos="fade-up">
+
+                        <div class="section-card-header">
+
+                            <div>
+                                <span class="section-kicker">PERFORMANCE</span>
+                                <h3>Revenue Analytics</h3>
+                                <p>Visual overview of your store revenue.</p>
+                            </div>
+
+                            <select id="chartPeriod" class="filter-select">
+                                <option value="7">Last 7 days</option>
+                                <option value="30" selected>Last 30 days</option>
+                                <option value="90">Last 90 days</option>
+                            </select>
+
+                        </div>
+
+                        <div class="chart-container">
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+
+                    </div>
+
+
+                    <div class="surface-card distribution-card" data-aos="fade-up" data-aos-delay="100">
+
+                        <div class="section-card-header">
+
+                            <div>
+                                <span class="section-kicker">ORDER ANALYSIS</span>
+                                <h3>Order Distribution</h3>
+                                <p>Current order status breakdown.</p>
+                            </div>
+
+                            <i class="bi bi-three-dots"></i>
+
+                        </div>
+
+
+                        <div class="distribution-content">
+
+                            <div class="donut-container">
+
+                                <canvas id="orderChart"></canvas>
+
+                                <div class="donut-label">
+                                    <strong id="chartOrderTotal">0</strong>
+                                    <span>Orders</span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="chart-legend">
+
+                                <div>
+                                    <span class="legend-color legend-delivered"></span>
+                                    <span>Delivered</span>
+                                    <strong id="deliveredCount">0</strong>
+                                </div>
+
+                                <div>
+                                    <span class="legend-color legend-processing"></span>
+                                    <span>Processing</span>
+                                    <strong id="processingCount">0</strong>
+                                </div>
+
+                                <div>
+                                    <span class="legend-color legend-shipped"></span>
+                                    <span>Shipped</span>
+                                    <strong id="shippedCount">0</strong>
+                                </div>
+
+                                <div>
+                                    <span class="legend-color legend-cancelled"></span>
+                                    <span>Cancelled</span>
+                                    <strong id="cancelledCount">0</strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- RECENT ORDERS -->
+
+                <section class="bottom-grid">
+
+                    <div class="surface-card recent-orders-card" data-aos="fade-up">
+
+                        <div class="section-card-header">
+
+                            <div>
+                                <span class="section-kicker">LATEST ACTIVITY</span>
+                                <h3>Recent Orders</h3>
+                                <p>Latest customer purchases.</p>
+                            </div>
+
+                            <button class="text-link" data-view-target="orders">
+                                View All
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+
+                        </div>
+
+
+                        <div class="table-responsive">
+
+                            <table class="table admin-table">
+
+                                <thead>
+                                    <tr>
+                                        <th>ORDER ID</th>
+                                        <th>CUSTOMER</th>
+                                        <th>DATE</th>
+                                        <th>AMOUNT</th>
+                                        <th>STATUS</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="recentOrdersBody"></tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- STOCK ALERTS -->
+
+                    <div class="surface-card inventory-card" data-aos="fade-up" data-aos-delay="100">
+
+                        <div class="section-card-header">
+
+                            <div>
+                                <span class="section-kicker">INVENTORY HEALTH</span>
+                                <h3>Stock Overview</h3>
+                                <p>Products requiring attention.</p>
+                            </div>
+
+                            <i class="bi bi-box-seam"></i>
+
+                        </div>
+
+                        <div id="inventoryAlerts"></div>
+
+                        <button class="text-link inventory-action" data-view-target="products">
+                            Manage Products
+                            <i class="bi bi-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- QUICK ACTIONS -->
+
+                <section class="quick-actions-section" data-aos="fade-up">
+
+                    <div class="section-card-header">
+                        <div>
+                            <span class="section-kicker">WORKSPACE SHORTCUTS</span>
+                            <h3>Quick Actions</h3>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions-grid">
+
+                        <button class="quick-action-card" data-view-target="products">
+                            <i class="bi bi-plus-circle"></i>
+                            <span>Add New Product</span>
+                            <i class="bi bi-arrow-up-right quick-arrow"></i>
+                        </button>
+
+                        <button class="quick-action-card" data-view-target="orders">
+                            <i class="bi bi-bag-check"></i>
+                            <span>Manage Orders</span>
+                            <i class="bi bi-arrow-up-right quick-arrow"></i>
+                        </button>
+
+                        <button class="quick-action-card" data-view-target="customers">
+                            <i class="bi bi-person-plus"></i>
+                            <span>Manage Customers</span>
+                            <i class="bi bi-arrow-up-right quick-arrow"></i>
+                        </button>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+
+
+            <!-- PRODUCTS VIEW -->
+
+            <section class="content-view" id="productsView">
+
+                <div class="page-heading">
+
+                    <div>
+                        <span class="eyebrow">
+                            <span class="eyebrow-line"></span>
+                            CATALOGUE MANAGEMENT
+                        </span>
+
+                        <h1>Manage <span>Products.</span></h1>
+
+                        <p>Add, edit and manage your computer store products.</p>
+                    </div>
+
+                    <button class="gold-btn" id="addProductBtn">
+                        <i class="bi bi-plus-lg"></i>
+                        Add Product
+                    </button>
+
+                </div>
+
+
+                <div class="surface-card management-card">
+
+                    <div class="management-toolbar">
+
+                        <div>
+                            <h3>Product Catalogue</h3>
+                            <span id="productCountLabel">0 products</span>
+                        </div>
+
+                        <div class="management-filters">
+
+                            <div class="table-search">
+                                <i class="bi bi-search"></i>
+                                <input type="search" id="productSearch" placeholder="Search products...">
+                            </div>
+
+                            <select id="productCategoryFilter" class="filter-select">
+                                <option value="all">All Categories</option>
+                                <option value="Laptops">Laptops</option>
+                                <option value="Desktops">Desktops</option>
+                                <option value="Monitors">Monitors</option>
+                                <option value="Accessories">Accessories</option>
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-responsive">
+
+                        <table class="table admin-table">
+
+                            <thead>
+                                <tr>
+                                    <th>PRODUCT</th>
+                                    <th>SKU</th>
+                                    <th>CATEGORY</th>
+                                    <th>PRICE</th>
+                                    <th>STOCK</th>
+                                    <th>STATUS</th>
+                                    <th>ACTIONS</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="productsTableBody"></tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ORDERS VIEW -->
+
+            <section class="content-view" id="ordersView">
+
+                <div class="page-heading">
+
+                    <div>
+                        <span class="eyebrow">
+                            <span class="eyebrow-line"></span>
+                            ORDER MANAGEMENT
+                        </span>
+
+                        <h1>Customer <span>Orders.</span></h1>
+
+                        <p>Monitor purchases and update order fulfilment.</p>
+                    </div>
+
+                    <button class="gold-btn" id="exportOrders">
+                        <i class="bi bi-download"></i>
+                        Export Orders
+                    </button>
+
+                </div>
+
+
+                <div class="surface-card management-card">
+
+                    <div class="management-toolbar">
+
+                        <div>
+                            <h3>All Orders</h3>
+                            <span id="orderCountLabel">0 orders</span>
+                        </div>
+
+                        <div class="management-filters">
+
+                            <div class="table-search">
+                                <i class="bi bi-search"></i>
+                                <input type="search" id="orderSearch" placeholder="Search orders...">
+                            </div>
+
+                            <select id="orderStatusFilter" class="filter-select">
+                                <option value="all">All Status</option>
+                                <option value="Processing">Processing</option>
+                                <option value="Shipped">Shipped</option>
+                                <option value="Delivered">Delivered</option>
+                                <option value="Cancelled">Cancelled</option>
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-responsive">
+
+                        <table class="table admin-table">
+
+                            <thead>
+                                <tr>
+                                    <th>ORDER ID</th>
+                                    <th>CUSTOMER</th>
+                                    <th>EMAIL</th>
+                                    <th>DATE</th>
+                                    <th>AMOUNT</th>
+                                    <th>PAYMENT</th>
+                                    <th>STATUS</th>
+                                    <th>ACTIONS</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="ordersTableBody"></tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- CUSTOMERS VIEW -->
+
+            <section class="content-view" id="customersView">
+
+                <div class="page-heading">
+
+                    <div>
+                        <span class="eyebrow">
+                            <span class="eyebrow-line"></span>
+                            CUSTOMER RELATIONSHIPS
+                        </span>
+
+                        <h1>Our <span>Customers.</span></h1>
+
+                        <p>Manage customer details and their shopping relationships.</p>
+                    </div>
+
+                    <button class="gold-btn" id="addCustomerBtn">
+                        <i class="bi bi-person-plus"></i>
+                        Add Customer
+                    </button>
+
+                </div>
+
+
+                <div class="surface-card management-card">
+
+                    <div class="management-toolbar">
+
+                        <div>
+                            <h3>Customer Directory</h3>
+                            <span id="customerCountLabel">0 customers</span>
+                        </div>
+
+                        <div class="table-search">
+                            <i class="bi bi-search"></i>
+                            <input type="search" id="customerSearch" placeholder="Search customers...">
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-responsive">
+
+                        <table class="table admin-table">
+
+                            <thead>
+                                <tr>
+                                    <th>CUSTOMER</th>
+                                    <th>EMAIL</th>
+                                    <th>PHONE</th>
+                                    <th>CITY</th>
+                                    <th>JOINED</th>
+                                    <th>ACTIONS</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="customersTableBody"></tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="content-view" id="trackingView">
+
+    <div class="page-heading">
+
+        <div>
+            <span class="eyebrow">
+                <span class="eyebrow-line"></span>
+                LOGISTICS MANAGEMENT
+            </span>
+
+            <h1>Shipment <span>Tracking.</span></h1>
+
+            <p>Track every package, monitor delivery progress and manage shipments.</p>
+        </div>
+
+    </div>
+
+
+    <div class="tracking-search-card">
+
+        <div class="tracking-search-content">
+
+            <div class="tracking-search-icon">
+                <i class="bi bi-geo-alt"></i>
+            </div>
+
+            <span class="section-kicker">LIVE SHIPMENT LOOKUP</span>
+
+            <h2>Where is your order?</h2>
+
+            <p>Enter an Order ID or Tracking ID to explore its complete delivery journey.</p>
+
+            <form id="trackingSearchForm">
+
+                <div class="tracking-search-box">
+
+                    <i class="bi bi-search"></i>
+
+                    <input
+                        type="text"
+                        id="trackingIdInput"
+                        placeholder="Enter Tracking ID (e.g. STK-ORD39848)"
+                        required
+                        autocomplete="off">
+
+                    <button type="submit">
+                        Track Order
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </form>
+
+            <div class="tracking-samples">
+
+                <span>TRY SAMPLE:</span>
+
+                <button type="button" data-track-id="STK-ORD39848">
+                    STK-ORD39848
+                </button>
+
+                <button type="button" data-track-id="STK-ORD30283">
+                    STK-ORD30283
+                </button>
+
+                <button type="button" data-track-id="STK-ORD31856">
+                    STK-ORD31856
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="tracking-search-art">
+
+            <div class="tracking-art-circle">
+                <i class="bi bi-box-seam"></i>
+            </div>
+
+            <div class="tracking-art-small">
+                <i class="bi bi-truck"></i>
+            </div>
+
+            <span>EVERY ORDER. EVERY MILE.</span>
+
+        </div>
+
+    </div>
+
+
+    <div id="trackingResult">
+
+        <div class="tracking-empty-state">
+
+            <div class="empty-tracking-icon">
+                <i class="bi bi-box2"></i>
+            </div>
+
+            <h3>Ready to track your shipment?</h3>
+
+            <p>Enter a tracking ID above to view shipment details, supplier information and delivery progress.</p>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+            <!-- FOOTER -->
+
+            <footer class="dashboard-footer">
+
+                <span>© 2026 Stackly Computer Store.</span>
+
+                <span>
+                    Crafted with precision.
+                </span>
+
+            </footer>
+
+
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- PRODUCT MODAL -->
+
+    <div class="modal fade admin-modal" id="productModal" tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <div>
+                        <span class="section-kicker">CATALOGUE MANAGEMENT</span>
+                        <h5 class="modal-title" id="productModalTitle">Add New Product</h5>
+                    </div>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+                </div>
+
+
+                <form id="productForm">
+
+                    <div class="modal-body">
+
+                        <input type="hidden" id="productId">
+
+                        <div class="form-group">
+                            <label>Product Name</label>
+                            <input type="text" class="form-control" id="productName" required placeholder="Enter product name">
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>SKU</label>
+                                    <input type="text" class="form-control" id="productSku" required placeholder="ST-LAP-001">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Category</label>
+                                    <select class="form-select" id="productCategory" required>
+                                        <option value="">Select category</option>
+                                        <option value="Laptops">Laptops</option>
+                                        <option value="Desktops">Desktops</option>
+                                        <option value="Monitors">Monitors</option>
+                                        <option value="Accessories">Accessories</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Price (₹)</label>
+                                    <input type="number" class="form-control" id="productPrice" min="1" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Stock Quantity</label>
+                                    <input type="number" class="form-control" id="productStock" min="0" required>
+                                </div>
+                            </div>
+
+                        </div>
+
+                       <div class="form-group">
+
+    <label>Project Image Path / Image URL</label>
+
+    <input
+        type="text"
+        class="form-control"
+        id="productImage"
+        placeholder="assets/images/computer1.webp">
+
+    <small class="image-help-text">
+        Enter a project-relative path or paste an image URL.
+    </small>
+
+</div>
+
+
+<div class="form-group">
+
+    <label>Or Upload From Computer</label>
+
+    <input
+        type="file"
+        class="form-control"
+        id="productImageFile"
+        accept="image/png,image/jpeg,image/webp,image/gif">
+
+    <small class="image-help-text">
+        Supported formats: JPG, PNG, WEBP and GIF.
+    </small>
+
+</div>
+
+
+<div class="product-image-preview" id="productImagePreviewWrap" hidden>
+
+    <span>IMAGE PREVIEW</span>
+
+    <img
+        src=""
+        id="productImagePreview"
+        alt="Product preview">
+
+</div>
+
+                    </div>
+
+
+                    <div class="modal-footer">
+
+                        <button type="button" class="outline-btn" data-bs-dismiss="modal">
+                            Cancel
+                        </button>
+
+                        <button type="submit" class="gold-btn">
+                            Save Product
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ORDER MODAL -->
+
+    <div class="modal fade admin-modal" id="orderModal" tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <div>
+                        <span class="section-kicker">ORDER MANAGEMENT</span>
+                        <h5 class="modal-title">Update Order</h5>
+                    </div>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+                </div>
+
+
+                <form id="orderForm">
+
+                    <div class="modal-body">
+
+                        <input type="hidden" id="editOrderId">
+
+                        <div class="form-group">
+                            <label>Order ID</label>
+                            <input type="text" id="editOrderNumber" class="form-control" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Payment Status</label>
+                            <select id="editPaymentStatus" class="form-select">
+                                <option value="Paid">Paid</option>
+                                <option value="Pending">Pending</option>
+                                <option value="Refunded">Refunded</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Order Status</label>
+                            <select id="editOrderStatus" class="form-select">
+                                <option value="Processing">Processing</option>
+                                <option value="Shipped">Shipped</option>
+                                <option value="Delivered">Delivered</option>
+                                <option value="Cancelled">Cancelled</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+
+                    <div class="modal-footer">
+
+                        <button type="button" class="outline-btn" data-bs-dismiss="modal">
+                            Cancel
+                        </button>
+
+                        <button type="submit" class="gold-btn">
+                            Update Order
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="modal fade admin-modal detail-modal" id="customerDetailsModal" tabindex="-1">
+
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <div>
+                    <span class="section-kicker">CUSTOMER RELATIONSHIPS</span>
+                    <h5 class="modal-title">Customer Profile</h5>
+                </div>
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+            </div>
+
+            <div class="modal-body" id="customerDetailsContent"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+    <!-- CUSTOMER MODAL -->
+
+    <div class="modal fade admin-modal" id="customerModal" tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <div>
+                        <span class="section-kicker">CUSTOMER MANAGEMENT</span>
+                        <h5 class="modal-title" id="customerModalTitle">Add Customer</h5>
+                    </div>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+                </div>
+
+
+                <form id="customerForm">
+
+                    <div class="modal-body">
+
+                        <input type="hidden" id="customerId">
+
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" class="form-control" id="customerName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" class="form-control" id="customerEmail" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" class="form-control" id="customerPhone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" class="form-control" id="customerCity" required>
+                        </div>
+
+                    </div>
+
+
+                    <div class="modal-footer">
+
+                        <button type="button" class="outline-btn" data-bs-dismiss="modal">
+                            Cancel
+                        </button>
+
+                        <button type="submit" class="gold-btn">
+                            Save Customer
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="modal fade admin-modal detail-modal"
+     id="orderDetailsModal"
+     tabindex="-1"
+     aria-labelledby="orderDetailsTitle"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <div>
+                    <span class="section-kicker">ORDER MANAGEMENT / DETAILS</span>
+                    <h5 class="modal-title" id="orderDetailsTitle">
+                        Order Information
+                    </h5>
+                </div>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close">
+                </button>
+
+            </div>
+
+            <div class="modal-body" id="orderDetailsContent">
+
+                <div class="text-center p-5">
+                    <div class="spinner-border text-secondary"></div>
+                    <p class="mt-3">Loading order details...</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+    <!-- TOAST -->
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+        <div id="adminToast" class="toast admin-toast" role="alert">
+
+            <div class="toast-body">
+
+                <i class="bi bi-check-circle-fill"></i>
+
+                <span id="toastMessage">Action completed successfully.</span>
+
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="admin-dashboard.js"></script>
+
+</body>
+</html>

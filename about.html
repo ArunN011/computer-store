@@ -1,0 +1,2354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050505">
+
+    <title>STACKLY | Premium Computers</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.27/dist/lenis.css">
+   <link rel="stylesheet" href="lenis.css">
+      <link rel="stylesheet" href="loader.css">
+      <link rel="stylesheet" href="loader.js">
+     <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="about.css">
+
+</head>
+
+<body>
+
+     <!-- Loader-->
+
+    <div id="stacklyLoader" class="stackly-loader">
+
+    <div class="loader-background-glow"></div>
+
+    <div class="loader-content">
+
+        <div class="loader-orbit orbit-one">
+            <span class="orbit-point"></span>
+        </div>
+
+        <div class="loader-orbit orbit-two">
+            <span class="orbit-point"></span>
+        </div>
+
+        <div class="loader-orbit orbit-three"></div>
+
+        <div class="loader-logo-container">
+
+            <div class="loader-logo-glow"></div>
+
+            <img
+                src="Assets/blacklogo.webp"
+                alt="STACKLY"
+                class="loader-logo"
+            >
+
+            <div class="loader-logo-scan"></div>
+
+        </div>
+
+        <div class="loader-brand-caption">
+            <span class="caption-line"></span>
+            <span>COMPUTER STORE</span>
+            <span class="caption-line"></span>
+        </div>
+
+        <div class="loader-tagline">
+            POWERING YOUR DIGITAL WORLD
+        </div>
+
+        <div class="loader-progress-container">
+
+            <div class="loader-progress-track">
+                <div class="loader-progress-fill" id="loaderProgress"></div>
+            </div>
+
+            <div class="loader-progress-info">
+                <span id="loaderStatus">INITIALIZING SYSTEM</span>
+                <span id="loaderPercentage">0%</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="loader-bottom-text">
+        STACKLY <span>TECHNOLOGY</span>
+    </div>
+
+</div>
+
+
+    
+
+    <header class="stackly-header">
+
+        <nav class="navbar navbar-expand-xl navbar-dark">
+
+            <div class="container-fluid header-container">
+
+
+                <a class="navbar-brand stackly-logo" href="index.html">
+
+                    <img src="Assets/blacklogo.webp"
+                        alt="Stackly Logo">
+
+                </a>
+
+
+
+                <div class="collapse navbar-collapse desktop-navigation">
+
+                    <ul class="navbar-nav mx-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">HOME</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">ABOUT US</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="desktop.html">DESKTOP</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="laptop.html">LAPTOPS</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="contact.html">CONTACT</a>
+                        </li>
+
+                    </ul>
+
+
+
+                    <div class="header-actions d-flex align-items-center">
+
+                        <!-- SEARCH -->
+
+                        <form class="header-search" role="search" action="error.html" method="get">
+
+    <i class="fa-solid fa-magnifying-glass"></i>
+
+    <input
+        type="search"
+        name="search"
+        placeholder="Search masterpiece..."
+        aria-label="Search products"
+        required
+    >
+
+    <button type="submit" class="visually-hidden">
+        Search
+    </button>
+
+</form>
+
+
+
+                        <a href="cart.html" class="header-action cart-action"
+                            aria-label="Shopping cart">
+
+                            <i class="fa-solid fa-cart-shopping"></i>
+
+                            <span class="cart-badge">0</span>
+
+                        </a>
+
+
+
+                        <a href="login.html
+                        " class="header-action"
+                            aria-label="My account">
+
+                            <i class="fa-solid fa-user"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="mobile-header-actions d-flex align-items-center ms-auto">
+
+                    <a href="cart.html" class="mobile-cart" aria-label="Shopping cart">
+
+                        <i class="fa-solid fa-cart-shopping"></i>
+
+                        <span class="cart-badge">0</span>
+
+                    </a>
+
+                    <button class="navbar-toggler mobile-menu-button"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#stacklyMobileMenu"
+                        aria-controls="stacklyMobileMenu"
+                        aria-label="Open navigation menu">
+
+                        <span class="navbar-toggler-icon"></span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <div class="offcanvas offcanvas-end stackly-offcanvas"
+        tabindex="-1"
+        id="stacklyMobileMenu"
+        aria-labelledby="mobileMenuLabel">
+
+
+      
+
+        <div class="offcanvas-header drawer-header">
+
+            <a href="index.html" class="drawer-logo">
+
+                <img src="Assets/blacklogo.webp"
+                    alt="Stackly Logo">
+
+            </a>
+
+            <button type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close menu">
+
+            </button>
+
+        </div>
+
+
+
+        <div class="offcanvas-body">
+
+
+
+           <form class="header-search" role="search" action="error.html" method="get">
+
+    <i class="fa-solid fa-magnifying-glass"></i>
+
+    <input
+        type="search"
+        name="search"
+        placeholder="Search masterpiece..."
+        aria-label="Search products"
+        required
+    >
+
+    <button type="submit" class="visually-hidden">
+        Search
+    </button>
+
+</form>
+
+
+
+            <nav class="mobile-navigation">
+                <br>
+
+                <a href="index.html" class="mobile-nav-link active">
+
+                    <span>HOME</span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+
+                <a href="about.html" class="mobile-nav-link">
+
+                    <span>ABOUT US</span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+
+                <a href="laptop.html" class="mobile-nav-link">
+
+                    <span>LAPTOPS</span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+
+                <a href="desktop.html" class="mobile-nav-link">
+
+                    <span>DESKTOP</span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+                <a href="conatct.html" class="mobile-nav-link">
+
+                    <span>CONTACT</span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </nav>
+
+
+  
+
+            <div class="mobile-account-links">
+
+                <a href="login.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>Login</span>
+
+                </a>
+
+
+                <a href="cart.html">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <span>Shopping Cart</span>
+
+                    <span class="mobile-cart-badge">2</span>
+
+                </a>
+
+            </div>
+
+
+            
+
+            <div class="drawer-footer">
+
+                <p>STACKLY PREMIUM COMPUTERS</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <main>
+        <section class="stackly-about-hero" id="about-hero">
+
+    <div class="about-hero-background">
+
+        <img
+            src="Assets/lap4.webp"
+            alt="Futuristic STACKLY technology laboratory"
+            class="about-hero-image"
+        >
+
+        <div class="about-hero-overlay"></div>
+
+        <div class="about-hero-light"></div>
+
+    </div>
+
+    <div class="about-hero-content">
+
+        <div class="about-hero-eyebrow">
+            <span></span>
+            THE STACKLY PHILOSOPHY
+            <span></span>
+        </div>
+
+        <h1 class="about-hero-title">
+            Crafting the <em>Impossible,</em>
+            <span>One Microchip at a Time.</span>
+        </h1>
+
+        <p class="about-hero-description">
+            Born from an obsession with perfection and a disdain for compromise,
+            STACKLY exists at the intersection of raw computational power and
+            high-end industrial design.
+        </p>
+
+        <div class="about-hero-bottom">
+
+            <span class="about-bottom-line"></span>
+
+            <span>PRECISION / INNOVATION / EXCELLENCE</span>
+
+            <span class="about-bottom-line"></span>
+
+        </div>
+
+    </div>
+
+    <div class="about-hero-scroll">
+
+        <span>DISCOVER OUR STORY</span>
+
+        <div class="about-scroll-line">
+            <span></span>
+        </div>
+
+    </div>
+
+    <div class="about-hero-corner about-corner-left"></div>
+
+    <div class="about-hero-corner about-corner-right"></div>
+
+</section>
+
+<section class="stackly-pillars" id="pillars">
+
+    <div class="pillars-container">
+
+        <div class="pillars-header">
+
+            <span class="pillars-eyebrow">
+                <span></span>
+                THE FOUNDATION OF STACKLY
+                <span></span>
+            </span>
+
+            <h2>The Lumina <em>Pillars</em></h2>
+
+            <p>THE VALUES THAT DEFINE OUR EXISTENCE</p>
+
+            <div class="pillars-header-decoration">
+                <i class="fa-solid fa-atom"></i>
+            </div>
+
+        </div>
+
+
+        <div class="pillars-grid">
+
+            <article class="pillar-card pillar-innovation">
+
+                <div class="pillar-card-top">
+
+                    <span class="pillar-index">01 / FORWARD THINKING</span>
+
+                    <div class="pillar-icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+
+                </div>
+
+                <div class="pillar-card-content">
+
+                    <span class="pillar-category">BEYOND THE POSSIBLE</span>
+
+                    <h3>Innovation</h3>
+
+                    <p>
+                        Pushing the boundaries of what's possible.
+                        We integrate emerging technologies that are
+                        years ahead of the mainstream market, creating
+                        systems that empower tomorrow's creators.
+                    </p>
+
+                </div>
+
+                <div class="pillar-divider"></div>
+
+                <div class="pillar-highlights">
+
+                    <div>
+                        <i class="fa-solid fa-microchip"></i>
+                        <span>Next-gen technology</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-brain"></i>
+                        <span>Intelligent engineering</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-rocket"></i>
+                        <span>Future-ready systems</span>
+                    </div>
+
+                </div>
+
+                <a href="error.html" class="pillar-link">
+                    <span>EXPLORE INNOVATION</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <div class="pillar-card-glow"></div>
+
+            </article>
+
+
+            <article class="pillar-card pillar-precision">
+
+                <div class="pillar-card-top">
+
+                    <span class="pillar-index">02 / ENGINEERING</span>
+
+                    <div class="pillar-icon">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                    </div>
+
+                </div>
+
+                <div class="pillar-card-content">
+
+                    <span class="pillar-category">PERFECTION IN EVERY DETAIL</span>
+
+                    <h3>Precision</h3>
+
+                    <p>
+                        Meticulous attention to every detail.
+                        From component selection to final calibration,
+                        every element is carefully considered.
+                        Nothing is left to chance.
+                    </p>
+
+                </div>
+
+                <div class="pillar-divider"></div>
+
+                <div class="pillar-highlights">
+
+                    <div>
+                        <i class="fa-solid fa-ruler-combined"></i>
+                        <span>Precision craftsmanship</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-sliders"></i>
+                        <span>Fine-tuned calibration</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Rigorous quality checks</span>
+                    </div>
+
+                </div>
+
+                <a href="error.html" class="pillar-link">
+                    <span>EXPLORE PRECISION</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <div class="pillar-card-glow"></div>
+
+            </article>
+
+
+            <article class="pillar-card pillar-luxury">
+
+                <div class="pillar-card-top">
+
+                    <span class="pillar-index">03 / REFINED EXPERIENCE</span>
+
+                    <div class="pillar-icon">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+
+                </div>
+
+                <div class="pillar-card-content">
+
+                    <span class="pillar-category">ELEVATED BY DESIGN</span>
+
+                    <h3>Luxury</h3>
+
+                    <p>
+                        An unparalleled experience from the moment
+                        you begin. We bring together refined materials,
+                        thoughtful design and attentive service
+                        for the most discerning professionals.
+                    </p>
+
+                </div>
+
+                <div class="pillar-divider"></div>
+
+                <div class="pillar-highlights">
+
+                    <div>
+                        <i class="fa-solid fa-gem"></i>
+                        <span>Premium materials</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-user-check"></i>
+                        <span>Personalized experience</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-star"></i>
+                        <span>Exceptional craftsmanship</span>
+                    </div>
+
+                </div>
+
+                <a href="error.html" class="pillar-link">
+                    <span>EXPLORE LUXURY</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <div class="pillar-card-glow"></div>
+
+            </article>
+
+        </div>
+
+
+        <div class="pillars-manifesto">
+
+            <div class="manifesto-left">
+
+                <div class="manifesto-symbol">
+                    <i class="fa-solid fa-infinity"></i>
+                </div>
+
+                <div class="manifesto-content">
+
+                    <span>OUR GUIDING PHILOSOPHY</span>
+
+                    <h3>Technology is our craft. Excellence is our standard.</h3>
+
+                    <p>
+                        Every decision, every component and every experience
+                        is guided by the same commitment to doing things better.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <a href="error.html" class="manifesto-button">
+
+                DISCOVER OUR PHILOSOPHY
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+        <div class="pillars-bottom">
+
+            <span>INNOVATION</span>
+
+            <div class="pillars-bottom-line"></div>
+
+            <span>PRECISION</span>
+
+            <div class="pillars-bottom-line"></div>
+
+            <span>LUXURY</span>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="stackly-team" id="team">
+
+    <div class="team-container">
+
+        <div class="team-header">
+
+            <div class="team-header-left">
+
+                <span class="team-eyebrow">
+                    <span></span>
+                    THE PEOPLE BEHIND THE PERFORMANCE
+                </span>
+
+                <h2>The <em>Visionaries</em></h2>
+
+                <p>MEET THE MINDS BEHIND THE MACHINE</p>
+
+            </div>
+
+            <div class="team-header-right">
+
+                <span class="team-header-number">01 — 04</span>
+
+                <span class="team-header-caption">
+                    A SHARED VISION. AN EXTRAORDINARY STANDARD.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="team-grid">
+
+
+            <article class="team-card">
+
+                <div class="team-image-wrapper">
+
+                    <img
+                        src="Assets/IT18.webp"
+                        alt="Julian Sterling"
+                        class="team-image"
+                        loading="lazy"
+                        decoding="async"
+                    >
+
+                    <div class="team-image-overlay"></div>
+
+                    <div class="team-image-top">
+                        <span>01</span>
+                        <span>THE VISIONARY</span>
+                    </div>
+
+                    <div class="team-social-overlay">
+
+                        <span class="team-social-label">CONNECT WITH JULIAN</span>
+
+                        <div class="team-social-links">
+
+                            <a href="error.html" aria-label="Julian on Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+
+                            <a href="error.html" aria-label="Julian on LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+
+                            <a href="error.html" aria-label="Julian on X">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+
+                            <a href="error.html" aria-label="Julian on Behance">
+                                <i class="fa-brands fa-behance"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="team-image-bottom">
+                        <span>STACKLY / LEADERSHIP</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="team-card-content">
+
+                    <div class="team-member-category">
+                        FOUNDER & CHIEF VISIONARY
+                    </div>
+
+                    <div class="team-member-name-row">
+
+                        <h3>Julian Sterling</h3>
+
+                        <span class="team-member-mark">
+                            01
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Former aerospace engineer with a passion
+                        for high-performance computing.
+                    </p>
+
+                    <div class="team-member-divider"></div>
+
+                    <div class="team-member-footer">
+                        <span>INNOVATION & STRATEGY</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </div>
+
+                <div class="team-card-accent"></div>
+
+            </article>
+
+
+            <article class="team-card">
+
+                <div class="team-image-wrapper">
+
+                    <img
+                        src="Assets/IT20.webp"
+                        alt="Amara Vance"
+                        class="team-image"
+                        loading="lazy"
+                        decoding="async"
+                    >
+
+                    <div class="team-image-overlay"></div>
+
+                    <div class="team-image-top">
+                        <span>02</span>
+                        <span>THE CREATIVE</span>
+                    </div>
+
+                    <div class="team-social-overlay">
+
+                        <span class="team-social-label">CONNECT WITH AMARA</span>
+
+                        <div class="team-social-links">
+
+                            <a href="error.html" aria-label="Amara on Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+
+                            <a href="error.html" aria-label="Amara on LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+
+                            <a href="error.html" aria-label="Amara on X">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+
+                            <a href="error.html" aria-label="Amara on Behance">
+                                <i class="fa-brands fa-behance"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="team-image-bottom">
+                        <span>STACKLY / DESIGN</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="team-card-content">
+
+                    <div class="team-member-category team-category-purple">
+                        HEAD OF INDUSTRIAL DESIGN
+                    </div>
+
+                    <div class="team-member-name-row">
+
+                        <h3>Amara Vance</h3>
+
+                        <span class="team-member-mark">
+                            02
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Recipient of multiple Red Dot awards
+                        for minimalist product design.
+                    </p>
+
+                    <div class="team-member-divider"></div>
+
+                    <div class="team-member-footer">
+                        <span>DESIGN & EXPERIENCE</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </div>
+
+                <div class="team-card-accent"></div>
+
+            </article>
+
+
+            <article class="team-card">
+
+                <div class="team-image-wrapper">
+
+                    <img
+                        src="Assets/IT21.webp"
+                        alt="Dr. Elias Thorne"
+                        class="team-image"
+                        loading="lazy"
+                        decoding="async"
+                    >
+
+                    <div class="team-image-overlay"></div>
+
+                    <div class="team-image-top">
+                        <span>03</span>
+                        <span>THE ENGINEER</span>
+                    </div>
+
+                    <div class="team-social-overlay">
+
+                        <span class="team-social-label">CONNECT WITH ELIAS</span>
+
+                        <div class="team-social-links">
+
+                            <a href="error.html" aria-label="Elias on Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+
+                            <a href="error.html" aria-label="Elias on LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+
+                            <a href="error.html" aria-label="Elias on X">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+
+                            <a href="error.html" aria-label="Elias on GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="team-image-bottom">
+                        <span>STACKLY / ENGINEERING</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="team-card-content">
+
+                    <div class="team-member-category team-category-teal">
+                        VP OF ENGINEERING
+                    </div>
+
+                    <div class="team-member-name-row">
+
+                        <h3>Dr. Elias Thorne</h3>
+
+                        <span class="team-member-mark">
+                            03
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Specialist in liquid cooling dynamics
+                        and thermal management.
+                    </p>
+
+                    <div class="team-member-divider"></div>
+
+                    <div class="team-member-footer">
+                        <span>ENGINEERING & RESEARCH</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </div>
+
+                <div class="team-card-accent"></div>
+
+            </article>
+
+
+            <article class="team-card">
+
+                <div class="team-image-wrapper">
+
+                    <img
+                        src="Assets/student2.webp"
+                        alt="Sophie Chen"
+                        class="team-image"
+                        loading="lazy"
+                        decoding="async"
+                    >
+
+                    <div class="team-image-overlay"></div>
+
+                    <div class="team-image-top">
+                        <span>04</span>
+                        <span>THE LEADER</span>
+                    </div>
+
+                    <div class="team-social-overlay">
+
+                        <span class="team-social-label">CONNECT WITH SOPHIE</span>
+
+                        <div class="team-social-links">
+
+                            <a href="error.html" aria-label="Sophie on Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+
+                            <a href="error.html" aria-label="Sophie on LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+
+                            <a href="error.html" aria-label="Sophie on X">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+
+                            <a href="error.html" aria-label="Sophie on Behance">
+                                <i class="fa-brands fa-behance"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="team-image-bottom">
+                        <span>STACKLY / OPERATIONS</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="team-card-content">
+
+                    <div class="team-member-category team-category-purple">
+                        CHIEF OPERATIONS OFFICER
+                    </div>
+
+                    <div class="team-member-name-row">
+
+                        <h3>Sophie Chen</h3>
+
+                        <span class="team-member-mark">
+                            04
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Expert in global luxury supply chains
+                        and white-glove logistics.
+                    </p>
+
+                    <div class="team-member-divider"></div>
+
+                    <div class="team-member-footer">
+                        <span>OPERATIONS & STRATEGY</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </div>
+
+                <div class="team-card-accent"></div>
+
+            </article>
+
+
+        </div>
+
+
+        <div class="team-bottom">
+
+            <div class="team-bottom-left">
+
+                <span class="team-bottom-dot"></span>
+
+                <span>FOUR MINDS. ONE VISION.</span>
+
+            </div>
+
+            <div class="team-bottom-center">
+                BUILT BY PEOPLE WHO CARE ABOUT EVERY DETAIL.
+            </div>
+
+            <a href="error.html" class="team-bottom-link">
+                MEET OUR CULTURE
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="stackly-manifesto" id="manifesto">
+
+    <div class="manifesto-container">
+
+        <div class="manifesto-header">
+
+            <span class="manifesto-eyebrow">
+                <span></span>
+                THE STACKLY ENGINEERING STANDARD
+                <span></span>
+            </span>
+
+            <h2>Our Technical <em>Manifesto</em></h2>
+
+            <p>A COMMITMENT TO PRECISION. A PROCESS WITHOUT COMPROMISE.</p>
+
+            <div class="manifesto-header-decoration">
+                <i class="fa-solid fa-microchip"></i>
+            </div>
+
+        </div>
+
+
+        <div class="manifesto-intro">
+
+            <span>FROM FIRST CONVERSATION TO FINAL CALIBRATION</span>
+
+            <p>
+                Every exceptional machine begins with a deliberate process.
+                Four principles guide every decision we make, every component
+                we select and every system we deliver.
+            </p>
+
+        </div>
+
+
+        <div class="manifesto-journey">
+
+            <div class="manifesto-track">
+                <span class="manifesto-track-fill"></span>
+            </div>
+
+
+            <div class="manifesto-steps">
+
+
+                <article class="manifesto-step">
+
+                    <div class="manifesto-step-top">
+
+                        <div class="manifesto-node">
+                            <span></span>
+                        </div>
+
+                        <div class="manifesto-step-number">
+                            I<span>.</span>
+                        </div>
+
+                        <span class="manifesto-step-code">PHASE / 01</span>
+
+                    </div>
+
+
+                    <div class="manifesto-step-content">
+
+                        <span class="manifesto-step-kicker">
+                            UNDERSTAND THE VISION
+                        </span>
+
+                        <div class="manifesto-step-icon icon-gold">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+
+                        <h3>Consult</h3>
+
+                        <p>
+                            We begin by understanding your specific workflow,
+                            from software requirements and creative ambitions
+                            to ambient room temperature and future needs.
+                        </p>
+
+                        <div class="manifesto-detail">
+
+                            <span>WHAT WE EXPLORE</span>
+
+                            <div>
+                                <i class="fa-solid fa-check"></i>
+                                Your creative workflow
+                            </div>
+
+                            <div>
+                                <i class="fa-solid fa-check"></i>
+                                Performance requirements
+                            </div>
+
+                            <div>
+                                <i class="fa-solid fa-check"></i>
+                                Personalized system goals
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="manifesto-step-footer">
+                        <span>DISCOVERY & PLANNING</span>
+                        <a href="error.html">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <article class="manifesto-step">
+
+                    <div class="manifesto-step-top">
+
+                        <div class="manifesto-node node-purple">
+                            <span></span>
+                        </div>
+
+                        <div class="manifesto-step-number number-purple">
+                            II<span>.</span>
+                        </div>
+
+                        <span class="manifesto-step-code">PHASE / 02</span>
+
+                    </div>
+
+
+                    <div class="manifesto-step-content">
+
+                        <span class="manifesto-step-kicker">
+                            SELECT WITH PURPOSE
+                        </span>
+
+                        <div class="manifesto-step-icon icon-purple">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+
+                        <h3>Source</h3>
+
+                        <p>
+                            Only carefully selected components enter our
+                            builds. Every part is evaluated for compatibility,
+                            reliability and maximum capability.
+                        </p>
+
+                        <div class="manifesto-detail">
+
+                            <span>WHAT WE SELECT</span>
+
+                            <div>
+                                <i class="fa-solid fa-check"></i>
+                                Premium hardware components
+                            </div>
+
+                            <div>
+                                <i class="fa-solid fa-check"></i>
+                                Compatibility verification
+                            </div>
+
+                            <div>
+                                <i class="fa-solid fa-check"></i>
+                                Performance-driven selection
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="manifesto-step-footer">
+                        <span>COMPONENT INTELLIGENCE</span>
+                       <a href="error.html">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <article class="manifesto-step">
+
+                    <div class="manifesto-step-top">
+
+                        <div class="manifesto-node node-teal">
+                            <span></span>
+                        </div>
+
+                        <div class="manifesto-step-number number-teal">
+                            III<span>.</span>
+                        </div>
+
+                        <span class="manifesto-step-code">PHASE / 03</span>
+
+                    </div>
+
+
+                    <div class="manifesto-step-content">
+
+                        <span class="manifesto-step-kicker">
+                            CRAFT WITHOUT COMPROMISE
+                        </span>
+
+                        <div class="manifesto-step-icon icon-teal">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+
+                        <h3>Execute</h3>
+
+                        <p>
+                            Master builders assemble your system in
+                            precision-controlled environments. From
+                            cable management to thermal optimization,
+                            every detail receives attention.
+                        </p>
+
+                        <div class="manifesto-detail">
+
+                            <span>WHAT WE PERFECT</span>
+
+                            <div>
+                                <i class="fa-solid fa-check"></i>
+                                Precision system assembly
+                            </div>
+
+                            <div>
+                                <i class="fa-solid fa-check"></i>
+                                Thermal optimization
+                            </div>
+
+                            <div>
+                                <i class="fa-solid fa-check"></i>
+                                Testing and calibration
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="manifesto-step-footer">
+                        <span>PRECISION ENGINEERING</span>
+                        <a href="error.html">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <article class="manifesto-step">
+
+                    <div class="manifesto-step-top">
+
+                        <div class="manifesto-node node-gold">
+                            <span></span>
+                        </div>
+
+                        <div class="manifesto-step-number number-gold">
+                            IV<span>.</span>
+                        </div>
+
+                        <span class="manifesto-step-code">PHASE / 04</span>
+
+                    </div>
+
+
+                    <div class="manifesto-step-content">
+
+                        <span class="manifesto-step-kicker">
+                            PERFORMANCE THAT CONTINUES
+                        </span>
+
+                        <div class="manifesto-step-icon icon-gold">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <h3>Support</h3>
+
+                        <p>
+                            Completion is just the beginning. We provide
+                            ongoing assistance, system guidance and
+                            support to help your technology perform
+                            at its best.
+                        </p>
+
+                        <div class="manifesto-detail">
+
+                            <span>WHAT WE PROVIDE</span>
+
+                            <div>
+                                <i class="fa-solid fa-check"></i>
+                                Technical assistance
+                            </div>
+
+                            <div>
+                                <i class="fa-solid fa-check"></i>
+                                Maintenance guidance
+                            </div>
+
+                            <div>
+                                <i class="fa-solid fa-check"></i>
+                                Continued care
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="manifesto-step-footer">
+                        <span>LONG-TERM PARTNERSHIP</span>
+                        <a href="error.html">
+                        <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="manifesto-quote">
+
+            <div class="manifesto-quote-symbol">
+                <i class="fa-solid fa-quote-left"></i>
+            </div>
+
+            <div class="manifesto-quote-content">
+
+                <span>THE PRINCIPLE BEHIND EVERY BUILD</span>
+
+                <h3>
+                    We don't leave excellence to chance.
+                    <em>We engineer it.</em>
+                </h3>
+
+            </div>
+
+            <a href="error.html" class="manifesto-button">
+
+                EXPLORE OUR APPROACH
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+        <div class="manifesto-bottom">
+
+            <span>CONSULT</span>
+
+            <div></div>
+
+            <span>SOURCE</span>
+
+            <div></div>
+
+            <span>EXECUTE</span>
+
+            <div></div>
+
+            <span>SUPPORT</span>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="stackly-pricing" id="pricing">
+
+    <div class="pricing-container">
+
+        <div class="pricing-header">
+
+            <span class="pricing-eyebrow">
+                <span></span>
+                EXCLUSIVE STACKLY SERVICES
+                <span></span>
+            </span>
+
+            <h2>Choose Your Level of <em>Excellence</em></h2>
+
+            <p>
+                Exceptional technology deserves exceptional care.
+                Find the support experience that matches your ambition.
+            </p>
+
+            <div class="pricing-trust">
+                <span><i class="fa-solid fa-shield-halved"></i> RELIABLE SUPPORT</span>
+                <span><i class="fa-solid fa-gem"></i> PREMIUM SERVICE</span>
+                <span><i class="fa-solid fa-headset"></i> EXPERT ASSISTANCE</span>
+            </div>
+
+        </div>
+
+
+        <div class="pricing-grid">
+
+
+            <article class="pricing-card pricing-core">
+
+                <div class="pricing-card-top">
+
+                    <span class="pricing-plan-label">01 / ESSENTIAL CARE</span>
+
+                    <div class="pricing-icon pricing-icon-gold">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                </div>
+
+                <div class="pricing-plan-name">
+
+                    <h3>Core Care</h3>
+
+                    <p>Essential protection for everyday performance.</p>
+
+                </div>
+
+                <div class="pricing-price">
+
+                    <span class="pricing-currency">$</span>
+                    <span class="pricing-amount">99</span>
+                    <span class="pricing-period">/ month</span>
+
+                </div>
+
+                <div class="pricing-price-note">
+                    Reliable essentials for your personal system.
+                </div>
+
+                <div class="pricing-divider"></div>
+
+                <div class="pricing-features-heading">
+                    YOUR PLAN INCLUDES
+                </div>
+
+                <ul class="pricing-features">
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Remote Technical Support</span>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Annual OS Optimization</span>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Priority Parts Sourcing</span>
+                    </li>
+
+                    <li class="feature-unavailable">
+                        <i class="fa-solid fa-minus"></i>
+                        <span>On-Site Maintenance</span>
+                    </li>
+
+                </ul>
+
+                <div class="pricing-card-footer">
+
+                    <div class="pricing-footer-info">
+                        <span class="pricing-status-dot"></span>
+                        ESSENTIAL PROTECTION
+                    </div>
+
+                    <a href="error.html" class="pricing-button pricing-button-dark">
+                        <span>SUBSCRIBE NOW</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="pricing-card pricing-featured">
+
+                <div class="pricing-popular">
+                    <i class="fa-solid fa-crown"></i>
+                    MOST POPULAR
+                </div>
+
+                <div class="pricing-card-top">
+
+                    <span class="pricing-plan-label">02 / PROFESSIONAL CARE</span>
+
+                    <div class="pricing-icon pricing-icon-featured">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+
+                </div>
+
+                <div class="pricing-plan-name">
+
+                    <h3>Director's Tier</h3>
+
+                    <p>Priority care for demanding professionals.</p>
+
+                </div>
+
+                <div class="pricing-price">
+
+                    <span class="pricing-currency">$</span>
+                    <span class="pricing-amount">299</span>
+                    <span class="pricing-period">/ month</span>
+
+                </div>
+
+                <div class="pricing-price-note">
+                    An elevated experience for your flagship system.
+                </div>
+
+                <div class="pricing-divider"></div>
+
+                <div class="pricing-features-heading">
+                    EVERYTHING IN CORE, PLUS
+                </div>
+
+                <ul class="pricing-features">
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>2-Hour Response Guarantee</span>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Quarterly On-Site Checkup</span>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Guaranteed Loaner PC</span>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Thermal Paste Renewal</span>
+                    </li>
+
+                </ul>
+
+                <div class="pricing-card-footer">
+
+                    <div class="pricing-footer-info">
+                        <span class="pricing-status-dot"></span>
+                        PRIORITY PROFESSIONAL CARE
+                    </div>
+
+                    <a href="error.html" class="pricing-button pricing-button-featured">
+                        <span>SUBSCRIBE NOW</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+                <div class="pricing-featured-glow"></div>
+
+            </article>
+
+
+            <article class="pricing-card pricing-concierge">
+
+                <div class="pricing-card-top">
+
+                    <span class="pricing-plan-label">03 / ELITE EXPERIENCE</span>
+
+                    <div class="pricing-icon pricing-icon-gold">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+
+                </div>
+
+                <div class="pricing-plan-name">
+
+                    <h3>Concierge Elite</h3>
+
+                    <p>Unlimited attention for uncompromising performance.</p>
+
+                </div>
+
+                <div class="pricing-price">
+
+                    <span class="pricing-currency">$</span>
+                    <span class="pricing-amount">999</span>
+                    <span class="pricing-period">/ month</span>
+
+                </div>
+
+                <div class="pricing-price-note">
+                    A dedicated relationship built around your needs.
+                </div>
+
+                <div class="pricing-divider"></div>
+
+                <div class="pricing-features-heading">
+                    EVERYTHING IN DIRECTOR'S, PLUS
+                </div>
+
+                <ul class="pricing-features">
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Dedicated Support Engineer</span>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Instant 24/7 Global Access</span>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Unlimited On-Site Calls</span>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Annual Hardware Credit ($2K)</span>
+                    </li>
+
+                </ul>
+
+                <div class="pricing-card-footer">
+
+                    <div class="pricing-footer-info">
+                        <span class="pricing-status-dot"></span>
+                        PERSONALIZED ELITE CARE
+                    </div>
+
+                    <a href="error.html" class="pricing-button pricing-button-dark">
+                        <span>CONTACT SALES</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <div class="pricing-bottom">
+
+            <div class="pricing-bottom-left">
+
+                <div class="pricing-bottom-icon">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+
+                <div>
+                    <strong>YOUR TECHNOLOGY. OUR RESPONSIBILITY.</strong>
+                    <span>SUPPORT THAT GOES BEYOND THE PURCHASE.</span>
+                </div>
+
+            </div>
+
+            <a href="error.html" class="pricing-compare-link">
+                COMPARE SERVICE BENEFITS
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="pricing-caption">
+
+            <span>CORE CARE</span>
+            <span></span>
+            <span>DIRECTOR'S TIER</span>
+            <span></span>
+            <span>CONCIERGE ELITE</span>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="stackly-seal" id="lumina-seal">
+
+    <div class="seal-background">
+        <div class="seal-orb seal-orb-one"></div>
+        <div class="seal-orb seal-orb-two"></div>
+        <div class="seal-grid-pattern"></div>
+    </div>
+
+    <div class="seal-container">
+
+        <div class="seal-main">
+
+            <div class="seal-content">
+
+                <div class="seal-eyebrow">
+                    <span></span>
+                    THE STACKLY QUALITY STANDARD
+                    <span class="seal-eyebrow-line"></span>
+                </div>
+
+                <h2 class="seal-title">
+                    The Lumina <em>Seal.</em>
+                </h2>
+
+                <p class="seal-description">
+                    Every machine leaves our facility with a hand-signed
+                    certificate of authenticity. We don't just sell you
+                    a product; we provide a lasting commitment to
+                    engineering excellence, responsible sourcing and
+                    uncompromising performance.
+                </p>
+
+                <div class="seal-commitments">
+
+                    <div class="seal-commitment">
+
+                        <div class="seal-commitment-number">
+                            01<span>.</span>
+                        </div>
+
+                        <div class="seal-commitment-content">
+
+                            <div class="seal-commitment-heading">
+                                <i class="fa-solid fa-microscope"></i>
+                                <h3>Internal Audits</h3>
+                            </div>
+
+                            <p>
+                                Every unit undergoes up to 72 hours
+                                of continuous stress testing before
+                                receiving its Lumina certification.
+                            </p>
+
+                            <div class="seal-mini-progress">
+                                <span></span>
+                            </div>
+
+                            <span class="seal-commitment-label">
+                                PERFORMANCE VERIFICATION
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="seal-commitment">
+
+                        <div class="seal-commitment-number">
+                            02<span>.</span>
+                        </div>
+
+                        <div class="seal-commitment-content">
+
+                            <div class="seal-commitment-heading">
+                                <i class="fa-solid fa-leaf"></i>
+                                <h3>Sustainable Sourcing</h3>
+                            </div>
+
+                            <p>
+                                Our packaging prioritizes biodegradable
+                                materials, while selected aluminum
+                                components use recycled resources.
+                            </p>
+
+                            <div class="seal-mini-progress seal-green-progress">
+                                <span></span>
+                            </div>
+
+                            <span class="seal-commitment-label">
+                                RESPONSIBLE MATERIAL SELECTION
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="seal-commitment">
+
+                        <div class="seal-commitment-number">
+                            03<span>.</span>
+                        </div>
+
+                        <div class="seal-commitment-content">
+
+                            <div class="seal-commitment-heading">
+                                <i class="fa-solid fa-shield-halved"></i>
+                                <h3>Lifetime Commitment</h3>
+                            </div>
+
+                            <p>
+                                Every certified system is supported
+                                by dedicated technical assistance
+                                and ongoing product-care guidance.
+                            </p>
+
+                            <div class="seal-mini-progress seal-purple-progress">
+                                <span></span>
+                            </div>
+
+                            <span class="seal-commitment-label">
+                                CONTINUING CUSTOMER CARE
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <a href="error.html" class="seal-discover">
+
+                    <span>DISCOVER OUR QUALITY PROCESS</span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                    <span class="seal-discover-line"></span>
+
+                </a>
+
+            </div>
+
+
+            <div class="seal-visual">
+
+                <div class="seal-visual-heading">
+                    <span>AUTHENTICITY / VERIFIED</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </div>
+
+
+                <div class="seal-medallion">
+
+                    <div class="seal-outer-ring"></div>
+
+                    <div class="seal-starburst"></div>
+
+                    <div class="seal-inner-ring">
+
+                        <div class="seal-rotating-text">
+                            <span>STACKLY PREMIUM ENGINEERING • STACKLY PREMIUM ENGINEERING •</span>
+                        </div>
+
+                    </div>
+
+                    <div class="seal-center">
+
+                        <div class="seal-center-icon">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+
+                        <div class="seal-center-brand">
+                            STACKLY
+                        </div>
+
+                        <div class="seal-center-divider"></div>
+
+                        <div class="seal-center-certified">
+                            LUMINA
+                            <strong>VERIFIED</strong>
+                        </div>
+
+                        <div class="seal-check">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="seal-orbit-label orbit-label-one">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>QUALITY TESTED</span>
+                </div>
+
+                <div class="seal-orbit-label orbit-label-two">
+                    <i class="fa-solid fa-gem"></i>
+                    <span>PRECISION BUILT</span>
+                </div>
+
+                <div class="seal-orbit-label orbit-label-three">
+                    <i class="fa-solid fa-leaf"></i>
+                    <span>MINDFUL SOURCING</span>
+                </div>
+
+
+                <div class="seal-certificate-card">
+
+                    <div class="certificate-top">
+
+                        <div>
+                            <span>CERTIFICATION SERIES</span>
+                            <strong>LUMINA / 2026</strong>
+                        </div>
+
+                        <i class="fa-solid fa-file-signature"></i>
+
+                    </div>
+
+                    <div class="certificate-divider"></div>
+
+                    <div class="certificate-bottom">
+
+                        <span>BUILT WITH INTENTION.</span>
+
+                        <span>VERIFIED WITH PRECISION.</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="seal-statistics">
+
+            <div class="seal-stat">
+
+                <div class="seal-stat-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div>
+                    <h3>
+                        <span class="seal-counter" data-target="72">0</span>H
+                    </h3>
+                    <p>STRESS TESTING</p>
+                </div>
+
+            </div>
+
+
+            <div class="seal-stat">
+
+                <div class="seal-stat-icon">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+
+                <div>
+                    <h3>
+                        <span class="seal-counter" data-target="100">0</span><span>%</span>
+                    </h3>
+                    <p>QUALITY CHECKPOINTS COMPLETED</p>
+                </div>
+
+            </div>
+
+
+            <div class="seal-stat">
+
+                <div class="seal-stat-icon">
+                    <i class="fa-solid fa-recycle"></i>
+                </div>
+
+                <div>
+                    <h3>
+                        <span class="seal-counter" data-target="3">0</span>
+                    </h3>
+                    <p>ENGINEERING COMMITMENTS</p>
+                </div>
+
+            </div>
+
+
+            <div class="seal-stat">
+
+                <div class="seal-stat-icon">
+                    <i class="fa-solid fa-certificate"></i>
+                </div>
+
+                <div>
+                    <h3>01<span>/UNIT</span></h3>
+                    <p>INDIVIDUAL CERTIFICATION</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="seal-bottom">
+
+            <span>PRECISION IS NOT A PROMISE. IT IS OUR PROCESS.</span>
+
+            <div class="seal-bottom-line"></div>
+
+            <span>THE LUMINA STANDARD</span>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="stackly-final-cta" id="final-cta">
+
+    <div class="final-cta-background">
+        <span class="final-cta-glow final-glow-one"></span>
+        <span class="final-cta-glow final-glow-two"></span>
+        <span class="final-cta-decoration decoration-left"></span>
+        <span class="final-cta-decoration decoration-right"></span>
+    </div>
+
+    <div class="final-cta-container">
+
+        <div class="final-cta-eyebrow">
+            <span></span>
+            YOUR NEXT CHAPTER STARTS HERE
+            <span></span>
+        </div>
+
+        <div class="final-cta-heading-wrap">
+
+            <span class="final-cta-side-label">STACKLY / 2026</span>
+
+            <h2 class="final-cta-title">
+                Ready to elevate your
+                <em>experience?</em>
+            </h2>
+
+        </div>
+
+        <p class="final-cta-description">
+            Step into the future of personal computing. Explore our
+            curated collections or build a system that brings your
+            biggest ideas to life.
+        </p>
+
+
+        <div class="final-cta-actions">
+
+            <a href="error.html" class="final-cta-primary">
+
+                <span>CONFIGURE YOUR PC</span>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+                <span class="final-button-shine"></span>
+
+            </a>
+
+            <a href="error.html" class="final-cta-secondary">
+
+                <span class="final-secondary-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </span>
+
+                <span>CONTACT CONCIERGE</span>
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+            </a>
+
+        </div>
+
+
+        <div class="final-cta-trust">
+
+            <div class="final-trust-item">
+                <i class="fa-solid fa-microchip"></i>
+                <span>BUILT AROUND YOU</span>
+            </div>
+
+            <span class="final-trust-divider"></span>
+
+            <div class="final-trust-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>QUALITY ASSURED</span>
+            </div>
+
+            <span class="final-trust-divider"></span>
+
+            <div class="final-trust-item">
+                <i class="fa-solid fa-headset"></i>
+                <span>EXPERT GUIDANCE</span>
+            </div>
+
+        </div>
+
+
+        <div class="final-cta-bottom">
+
+            <span>PRECISION ENGINEERED</span>
+
+            <div class="final-cta-bottom-line"></div>
+
+            <span>PERSONALLY REFINED</span>
+
+        </div>
+
+    </div>
+
+</section>
+<footer class="stackly-footer" id="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-grid">
+
+           
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="footer-logo">
+                    <img src="Assets/blacklogo.webp" alt="STACKLY Logo">
+                </a>
+
+                <p class="footer-description">
+                    Hand-crafting the most powerful personal computers
+                    on Earth. Designed for creators, innovators and
+                    professionals who demand extraordinary performance.
+                </p>
+
+                <div class="footer-socials">
+
+                    <a href="error.html" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="error.html" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="error.html" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                    <a href="error.html" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h3>QUICK LINKS</h3>
+
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="about.html">About Us</a></li>
+
+                    <li><a href="desktop.html">Desktop</a></li>
+
+                    <li><a href="laptop.html">Laptops</a></li>
+
+                    <li><a href="cart.html">Cart</a></li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+
+          
+
+            <div class="footer-column">
+
+                <h3>SUPPORT</h3>
+
+                <ul>
+
+                    <li><a href="error.html">Concierge Desk</a></li>
+
+                    <li><a href="error.html">Warranty Registry</a></li>
+
+                    <li><a href="error.html">Repairs</a></li>
+
+                    <li><a href="error.html">Knowledge Base</a></li>
+
+                    <li><a href="error.html">Order Tracking</a></li>
+
+                    <li><a href="error.html">Technical Support</a></li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>COMPANY</h3>
+
+                <ul>
+
+                    <li><a href="error.html">Our Story</a></li>
+
+                    <li><a href="error.html">Sustainability</a></li>
+
+                    <li><a href="error.html">Careers</a></li>
+
+                    <li><a href="error.html">Press</a></li>
+
+                    <li><a href="error.html">Privacy Policy</a></li>
+
+                    <li><a href="error.html">Terms of Service</a></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="footer-copyright">
+                <span>&copy; 2026 STACKLY.</span>
+                <span>ALL RIGHTS RESERVED.</span>
+            </div>
+
+            <div class="footer-bottom-center">
+                <span class="footer-status-dot"></span>
+                CRAFTED FOR THE EXTRAORDINARY
+            </div>
+
+            <a href="#home" class="footer-back-top">
+                BACK TO TOP
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+    </main>
+
+<canvas id="stacklySmokeCanvas"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+     <script src="https://unpkg.com/lenis@1.3.27/dist/lenis.min.js"></script>
+     <script src="lenis.js"></script>
+     <script src="loader.js"></script>
+    <script src="about.js"></script>
+    <script src="cursor.js"></script>
+    <script src="nav.js"></script>
+</body>
+
+</html>

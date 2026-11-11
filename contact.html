@@ -1,0 +1,2125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#050505">
+
+    <title>STACKLY | Desktop Collection</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.27/dist/lenis.css">
+   <link rel="stylesheet" href="lenis.css">
+    <link rel="stylesheet" href="loader.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+
+    <div id="stacklyLoader" class="stackly-loader">
+
+        <div class="loader-background-glow"></div>
+
+        <div class="loader-content">
+
+            <div class="loader-orbit orbit-one"><span class="orbit-point"></span></div>
+            <div class="loader-orbit orbit-two"><span class="orbit-point"></span></div>
+            <div class="loader-orbit orbit-three"></div>
+
+            <div class="loader-logo-container">
+                <div class="loader-logo-glow"></div>
+                <img src="Assets/blacklogo.webp" alt="STACKLY" class="loader-logo">
+                <div class="loader-logo-scan"></div>
+            </div>
+
+            <div class="loader-brand-caption">
+                <span class="caption-line"></span>
+                <span>COMPUTER STORE</span>
+                <span class="caption-line"></span>
+            </div>
+
+            <div class="loader-tagline">POWERING YOUR DIGITAL WORLD</div>
+
+            <div class="loader-progress-container">
+                <div class="loader-progress-track">
+                    <div class="loader-progress-fill" id="loaderProgress"></div>
+                </div>
+                <div class="loader-progress-info">
+                    <span id="loaderStatus">INITIALIZING SYSTEM</span>
+                    <span id="loaderPercentage">0%</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="loader-bottom-text">STACKLY <span>TECHNOLOGY</span></div>
+
+    </div>
+
+
+    <header class="stackly-header">
+
+        <nav class="navbar navbar-expand-xl navbar-dark">
+
+            <div class="container-fluid header-container">
+
+                <a class="navbar-brand stackly-logo" href="index.html">
+                    <img src="Assets/blacklogo.webp" alt="Stackly Logo">
+                </a>
+
+                <div class="collapse navbar-collapse desktop-navigation">
+
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">ABOUT US</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="desktop.html">DESKTOP</a></li>
+                        <li class="nav-item"><a class="nav-link" href="laptop.html">LAPTOPS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+                    </ul>
+
+                    <div class="header-actions d-flex align-items-center">
+
+                        <form class="header-search" role="search" action="error.html" method="get">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="search" name="search" placeholder="Search masterpiece..." aria-label="Search products" required>
+                            <button type="submit" class="visually-hidden">Search</button>
+                        </form>
+
+                        <a href="cart.html" class="header-action cart-action" aria-label="Shopping cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="cart-badge">0</span>
+                        </a>
+
+                        <a href="login.html" class="header-action" aria-label="My account">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="mobile-header-actions d-flex align-items-center ms-auto">
+
+                    <a href="cart.html" class="mobile-cart" aria-label="Shopping cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="cart-badge">0</span>
+                    </a>
+
+                    <button class="navbar-toggler mobile-menu-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#stacklyMobileMenu" aria-controls="stacklyMobileMenu" aria-label="Open navigation menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <div class="offcanvas offcanvas-end stackly-offcanvas" tabindex="-1" id="stacklyMobileMenu" aria-labelledby="mobileMenuLabel">
+
+        <div class="offcanvas-header drawer-header">
+            <a href="index.html" class="drawer-logo">
+                <img src="Assets/blacklogo.webp" alt="Stackly Logo">
+            </a>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close menu"></button>
+        </div>
+
+        <div class="offcanvas-body">
+
+            <form class="header-search" role="search" action="error.html" method="get">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" name="search" placeholder="Search masterpiece..." aria-label="Search products" required>
+                <button type="submit" class="visually-hidden">Search</button>
+            </form>
+
+            <nav class="mobile-navigation">
+                <br>
+                <a href="index.html" class="mobile-nav-link"><span>HOME</span><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="about.html" class="mobile-nav-link"><span>ABOUT US</span><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="laptop.html" class="mobile-nav-link"><span>LAPTOPS</span><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="desktop.html" class="mobile-nav-link active"><span>DESKTOP</span><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="contact.html" class="mobile-nav-link"><span>CONTACT</span><i class="fa-solid fa-arrow-right"></i></a>
+            </nav>
+
+            <div class="mobile-account-links">
+                <a href="login.html">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Login</span>
+                </a>
+                <a href="cart.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Shopping Cart</span>
+                    <span class="mobile-cart-badge">0</span>
+                </a>
+            </div>
+
+            <div class="drawer-footer">
+                <p>STACKLY PREMIUM COMPUTERS</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <main>
+        <section class="stackly-contact-hero" id="contact-hero">
+
+    <div class="contact-hero-background">
+        <span class="contact-bg-glow contact-glow-one"></span>
+        <span class="contact-bg-glow contact-glow-two"></span>
+    </div>
+
+    <div class="contact-hero-container">
+
+        <div class="contact-hero-content">
+
+            <div class="contact-hero-eyebrow">
+                <span></span>
+                CONNECT WITH STACKLY
+                <span></span>
+            </div>
+
+            <div class="contact-breadcrumb">
+                <a href="index.html">HOME</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>CONTACT</span>
+            </div>
+
+            <span class="contact-hero-kicker">
+                PERSONALIZED TECHNOLOGY ASSISTANCE
+            </span>
+
+            <h1 class="contact-hero-title">
+                Elite <em>Assistance.</em>
+                <span>For Elite Creators.</span>
+            </h1>
+
+            <p class="contact-hero-description">
+                Whether you're commissioning a custom workstation,
+                exploring your next performance laptop or need
+                expert technical guidance, our team is here to
+                help turn your ideas into extraordinary experiences.
+            </p>
+
+            <div class="contact-hero-highlights">
+
+                <div class="contact-highlight">
+
+                    <span class="contact-highlight-icon">
+                        <i class="fa-solid fa-microchip"></i>
+                    </span>
+
+                    <div>
+                        <strong>Custom Build Consultation</strong>
+                        <span>Find the right configuration for your workflow.</span>
+                    </div>
+
+                </div>
+
+                <div class="contact-highlight">
+
+                    <span class="contact-highlight-icon contact-icon-purple">
+                        <i class="fa-solid fa-headset"></i>
+                    </span>
+
+                    <div>
+                        <strong>Expert Technical Guidance</strong>
+                        <span>Get help with products and system requirements.</span>
+                    </div>
+
+                </div>
+
+                <div class="contact-highlight">
+
+                    <span class="contact-highlight-icon contact-icon-teal">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </span>
+
+                    <div>
+                        <strong>Dedicated Product Assistance</strong>
+                        <span>Support throughout your Stackly experience.</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-hero-actions">
+
+                <a href="error.html" class="contact-primary-btn">
+                    START A CONVERSATION
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <a href="error.html" class="contact-secondary-btn">
+                    <i class="fa-solid fa-computer"></i>
+                    EXPLORE COLLECTION
+                </a>
+
+            </div>
+
+
+            <div class="contact-hero-trust">
+
+                <div class="contact-trust-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    PERSONALIZED GUIDANCE
+                </div>
+
+                <span></span>
+
+                <div class="contact-trust-item">
+                    <i class="fa-solid fa-gem"></i>
+                    PREMIUM EXPERIENCE
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="contact-hero-visual">
+
+            <div class="contact-visual-top">
+
+                <span>STACKLY / CONCIERGE DESK</span>
+
+                <span class="contact-live-status">
+                    <i></i>
+                    READY TO ASSIST
+                </span>
+
+            </div>
+
+
+            <div class="contact-visual-stage">
+
+                <div class="contact-visual-orbit contact-orbit-one"></div>
+                <div class="contact-visual-orbit contact-orbit-two"></div>
+                <div class="contact-visual-orbit contact-orbit-three"></div>
+
+                <div class="contact-visual-halo"></div>
+
+                <div class="contact-tech-core">
+
+                    <div class="contact-core-inner">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+
+                    <span class="contact-core-dot dot-one"></span>
+                    <span class="contact-core-dot dot-two"></span>
+                    <span class="contact-core-dot dot-three"></span>
+                    <span class="contact-core-dot dot-four"></span>
+
+                </div>
+
+
+                <div class="contact-floating-card contact-card-one">
+
+                    <div class="contact-floating-icon">
+                        <i class="fa-solid fa-laptop"></i>
+                    </div>
+
+                    <div>
+                        <span>PRODUCT GUIDANCE</span>
+                        <strong>Find Your Perfect System</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-floating-card contact-card-two">
+
+                    <div class="contact-floating-icon floating-purple">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+
+                    <div>
+                        <span>TECHNICAL EXPERTISE</span>
+                        <strong>Built Around Your Needs</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-visual-bottom">
+
+                <div class="contact-visual-message">
+
+                    <span class="contact-message-label">
+                        THE STACKLY PROMISE
+                    </span>
+
+                    <h3>
+                        Your vision deserves
+                        <em>the right expertise.</em>
+                    </h3>
+
+                    <p>
+                        Every great system starts with a conversation.
+                    </p>
+
+                </div>
+
+                <div class="contact-visual-symbol">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </div>
+
+            </div>
+
+
+            <div class="contact-visual-index">
+                01 / CONNECT · 02 / DISCOVER · 03 / CREATE
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="contact-hero-bottom">
+
+        <span>WE LISTEN</span>
+
+        <div></div>
+
+        <span>WE UNDERSTAND</span>
+
+        <div></div>
+
+        <span>WE ENGINEER</span>
+
+    </div>
+
+</section>
+<section class="stackly-contact-form-section" id="contact-form">
+
+    <div class="contact-form-container">
+
+        <div class="contact-form-heading">
+
+            <span class="contact-form-eyebrow">
+                <span></span>
+                LET'S BUILD SOMETHING EXTRAORDINARY
+                <span></span>
+            </span>
+
+            <h2>Your Vision. <em>Our Expertise.</em></h2>
+
+            <p>
+                Tell us what you're looking for. Whether it's a custom
+                workstation, gaming PC or expert technical assistance,
+                our team is ready to guide you.
+            </p>
+
+        </div>
+
+
+        <div class="contact-form-layout">
+
+
+            <div class="contact-form-main">
+
+                <div class="contact-form-card">
+
+                    <div class="contact-form-card-heading">
+
+                        <div>
+                            <span>PERSONALIZED ASSISTANCE</span>
+                            <h3>Start a Conversation</h3>
+                        </div>
+
+                        <div class="contact-form-heading-icon">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </div>
+
+                    </div>
+
+
+                    <form id="stacklyContactForm" novalidate>
+
+                        <div class="contact-form-grid">
+
+
+                            <div class="contact-field">
+
+                                <label for="contactName">
+                                    Full Name <span>*</span>
+                                </label>
+
+                                <div class="contact-input-wrap">
+                                    <i class="fa-regular fa-user"></i>
+
+                                    <input
+                                        type="text"
+                                        id="contactName"
+                                        name="name"
+                                        placeholder="Enter your full name"
+                                        maxlength="60"
+                                        autocomplete="name"
+                                        required
+                                    >
+                                </div>
+
+                                <small class="contact-error" id="nameError"></small>
+
+                            </div>
+
+
+                            <div class="contact-field">
+
+                                <label for="contactEmail">
+                                    Email Address <span>*</span>
+                                </label>
+
+                                <div class="contact-input-wrap">
+                                    <i class="fa-regular fa-envelope"></i>
+
+                                    <input
+                                        type="email"
+                                        id="contactEmail"
+                                        name="email"
+                                        placeholder="name@example.com"
+                                        maxlength="100"
+                                        autocomplete="email"
+                                        required
+                                    >
+                                </div>
+
+                                <small class="contact-error" id="emailError"></small>
+
+                            </div>
+
+
+                            <div class="contact-field">
+
+                                <label for="contactPhone">
+                                    Phone Number <span>*</span>
+                                </label>
+
+                                <div class="contact-input-wrap">
+                                    <i class="fa-solid fa-phone"></i>
+
+                                    <input
+                                        type="tel"
+                                        id="contactPhone"
+                                        name="phone"
+                                        placeholder="+91 98765 43210"
+                                        maxlength="16"
+                                        autocomplete="tel"
+                                        inputmode="tel"
+                                        required
+                                    >
+                                </div>
+
+                                <small class="contact-error" id="phoneError"></small>
+
+                            </div>
+
+
+                            <div class="contact-field">
+
+                                <label for="contactInquiry">
+                                    Inquiry Type <span>*</span>
+                                </label>
+
+                                <div class="contact-input-wrap contact-select-wrap">
+                                    <i class="fa-solid fa-list-check"></i>
+
+                                    <select id="contactInquiry" name="inquiry" required>
+
+                                        <option value="">Select inquiry type</option>
+
+                                        <option value="Product Enquiry">Product Enquiry</option>
+
+                                        <option value="Custom PC Build">Custom PC Build</option>
+
+                                        <option value="Gaming Desktop">Gaming Desktop</option>
+
+                                        <option value="Laptop Enquiry">Laptop Enquiry</option>
+
+                                        <option value="Workstation">Professional Workstation</option>
+
+                                        <option value="Hardware Upgrade">Hardware Upgrade</option>
+
+                                        <option value="Technical Support">Technical Support</option>
+
+                                        <option value="Warranty Assistance">Warranty Assistance</option>
+
+                                        <option value="Other">Other Enquiry</option>
+
+                                    </select>
+
+                                    <i class="fa-solid fa-chevron-down contact-select-arrow"></i>
+                                </div>
+
+                                <small class="contact-error" id="inquiryError"></small>
+
+                            </div>
+
+
+                            <div class="contact-field">
+
+                                <label for="contactProduct">
+                                    Product Interest <span>*</span>
+                                </label>
+
+                                <div class="contact-input-wrap contact-select-wrap">
+
+                                    <i class="fa-solid fa-computer"></i>
+
+                                    <select id="contactProduct" name="product" required>
+
+                                        <option value="">Choose a product</option>
+
+                                        <option value="Gaming Desktop">Gaming Desktop</option>
+
+                                        <option value="Professional Workstation">Professional Workstation</option>
+
+                                        <option value="Creator Desktop">Creator Desktop</option>
+
+                                        <option value="Gaming Laptop">Gaming Laptop</option>
+
+                                        <option value="Business Laptop">Business Laptop</option>
+
+                                        <option value="Custom Built PC">Custom Built PC</option>
+
+                                        <option value="PC Components">PC Components</option>
+
+                                        <option value="Accessories">Accessories</option>
+
+                                        <option value="Not Sure Yet">Not Sure Yet</option>
+
+                                    </select>
+
+                                    <i class="fa-solid fa-chevron-down contact-select-arrow"></i>
+
+                                </div>
+
+                                <small class="contact-error" id="productError"></small>
+
+                            </div>
+
+
+                            <div class="contact-field">
+
+                                <label for="contactBudget">
+                                    Estimated Budget <span>*</span>
+                                </label>
+
+                                <div class="contact-input-wrap contact-select-wrap">
+
+                                    <i class="fa-solid fa-indian-rupee-sign"></i>
+
+                                    <select id="contactBudget" name="budget" required>
+
+                                        <option value="">Select your budget</option>
+
+                                        <option value="Below ₹50,000">Below ₹50,000</option>
+
+                                        <option value="₹50,000 - ₹1,00,000">₹50,000 - ₹1,00,000</option>
+
+                                        <option value="₹1,00,000 - ₹1,50,000">₹1,00,000 - ₹1,50,000</option>
+
+                                        <option value="₹1,50,000 - ₹2,50,000">₹1,50,000 - ₹2,50,000</option>
+
+                                        <option value="₹2,50,000 - ₹5,00,000">₹2,50,000 - ₹5,00,000</option>
+
+                                        <option value="Above ₹5,00,000">Above ₹5,00,000</option>
+
+                                        <option value="Need Expert Guidance">Need Expert Guidance</option>
+
+                                    </select>
+
+                                    <i class="fa-solid fa-chevron-down contact-select-arrow"></i>
+
+                                </div>
+
+                                <small class="contact-error" id="budgetError"></small>
+
+                            </div>
+
+
+                            <div class="contact-field contact-field-full">
+
+                                <label for="contactSubject">
+                                    Subject <span>*</span>
+                                </label>
+
+                                <div class="contact-input-wrap">
+                                    <i class="fa-regular fa-pen-to-square"></i>
+
+                                    <input
+                                        type="text"
+                                        id="contactSubject"
+                                        name="subject"
+                                        placeholder="What would you like to discuss?"
+                                        maxlength="100"
+                                        required
+                                    >
+                                </div>
+
+                                <small class="contact-error" id="subjectError"></small>
+
+                            </div>
+
+
+                            <div class="contact-field contact-field-full">
+
+                                <div class="contact-message-label">
+
+                                    <label for="contactMessage">
+                                        Tell Us About Your Requirements <span>*</span>
+                                    </label>
+
+                                    <span id="messageCounter">0 / 1000</span>
+
+                                </div>
+
+                                <div class="contact-textarea-wrap">
+
+                                    <textarea
+                                        id="contactMessage"
+                                        name="message"
+                                        placeholder="Tell us about your preferred configuration, performance requirements or the assistance you need..."
+                                        minlength="20"
+                                        maxlength="1000"
+                                        rows="5"
+                                        required
+                                    ></textarea>
+
+                                </div>
+
+                                <small class="contact-error" id="messageError"></small>
+
+                            </div>
+
+
+                            <div class="contact-field-full contact-consent-field">
+
+                                <label class="contact-consent">
+
+                                    <input
+                                        type="checkbox"
+                                        id="contactConsent"
+                                        name="consent"
+                                        required
+                                    >
+
+                                    <span class="contact-consent-check"></span>
+
+                                    <span>
+                                        I confirm that the information provided is accurate
+                                        and agree to be contacted by STACKLY regarding
+                                        this enquiry. <strong>*</strong>
+                                    </span>
+
+                                </label>
+
+                                <small class="contact-error" id="consentError"></small>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="contact-form-submit-area">
+
+                            <div class="contact-form-submit-note">
+
+                                <i class="fa-solid fa-lock"></i>
+
+                                <span>Your information stays protected.</span>
+
+                            </div>
+
+                            <button type="submit" class="contact-submit-btn" id="contactSubmitBtn">
+
+                                <span>SUBMIT YOUR ENQUIRY</span>
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="contact-form-status" id="contactFormStatus" role="status" aria-live="polite"></div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+            <aside class="contact-form-sidebar">
+
+
+                <div class="contact-sidebar-intro">
+
+                    <span>THE STACKLY CONCIERGE</span>
+
+                    <h3>Every great build begins with the right conversation.</h3>
+
+                    <p>
+                        Connect with our team for personalized product
+                        recommendations and technical guidance.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-sidebar-item">
+
+                    <div class="contact-sidebar-icon">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+
+                    <div>
+                        <span>EMAIL ASSISTANCE</span>
+                        <a href="mailto:support@stackly.com">support@stackly.com</a>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-sidebar-item">
+
+                    <div class="contact-sidebar-icon sidebar-icon-purple">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+
+                    <div>
+                        <span>PHONE ENQUIRIES</span>
+                        <a href="tel:+919876543210">+91 98765 43210</a>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-sidebar-item">
+
+                    <div class="contact-sidebar-icon sidebar-icon-teal">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <div>
+                        <span>OUR LOCATION</span>
+                        <strong>Salem, Tamil Nadu, India</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-sidebar-divider"></div>
+
+
+                <div class="contact-sidebar-support">
+
+                    <div class="contact-support-icon">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+
+                    <div>
+
+                        <span>NEED PERSONAL GUIDANCE?</span>
+
+                        <h4>Speak with our experts.</h4>
+
+                        <p>
+                            Find the right technology for your
+                            professional and personal needs.
+                        </p>
+
+                        <a href="error.html">
+                            EXPLORE CONCIERGE SUPPORT
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-sidebar-bottom">
+
+                    <i class="fa-solid fa-microchip"></i>
+
+                    <span>PRECISION IN EVERY DETAIL.</span>
+
+                </div>
+
+
+            </aside>
+
+
+        </div>
+
+
+        <div class="contact-form-bottom">
+
+            <span>PERSONALIZED SERVICE</span>
+
+            <div></div>
+
+            <span>ENGINEERED AROUND YOU</span>
+
+            <div></div>
+
+            <span>STACKLY TECHNOLOGY</span>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="stackly-showrooms" id="showrooms">
+
+    <div class="showrooms-container">
+
+        <div class="showrooms-header">
+
+            <div class="showrooms-heading">
+
+                <span class="showrooms-eyebrow">
+                    <span></span>
+                    EXPERIENCE STACKLY IN PERSON
+                </span>
+
+                <h2>Our <em>Showrooms.</em></h2>
+
+                <p>
+                    Discover precision engineering up close.
+                    Explore our spaces, experience premium technology
+                    and meet our team in person.
+                </p>
+
+            </div>
+
+
+            <div class="showrooms-navigation">
+
+                <button type="button" id="showroomPrev" aria-label="Previous showroom">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <button type="button" id="showroomNext" aria-label="Next showroom">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="showrooms-slider" id="showroomSlider">
+
+            <div class="showrooms-track" id="showroomTrack">
+
+
+                <article class="showroom-card">
+
+                    <a href="error.html" class="showroom-image-link">
+
+                        <div class="showroom-image">
+
+                            <img
+                                src="Assets/showroom2.webp"
+                                alt="STACKLY premium Tokyo showroom"
+                                loading="lazy"
+                            >
+
+                            <div class="showroom-image-overlay"></div>
+
+                            <span class="showroom-tag">
+                                FLAGSHIP
+                            </span>
+
+                            <span class="showroom-image-number">
+                                01 / 03
+                            </span>
+
+                            <div class="showroom-image-content">
+
+                                <span>JAPAN</span>
+
+                                <h3>Tokyo <em>Shibuya.</em></h3>
+
+                            </div>
+
+                            <div class="showroom-image-arrow">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+                    <div class="showroom-details">
+
+                        <div class="showroom-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>TOKYO, JAPAN</span>
+                        </div>
+
+                        <p>
+                            Located in Shibuya, experience our flagship
+                            collection of high-performance desktop
+                            systems and premium technology.
+                        </p>
+
+                        <div class="showroom-meta">
+
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                BY APPOINTMENT
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-microchip"></i>
+                                FLAGSHIP EXPERIENCE
+                            </span>
+
+                        </div>
+
+                        <a href="error.html" class="showroom-booking">
+                            BOOK AN APPOINTMENT
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <span></span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="showroom-card">
+
+                    <a href="error.html" class="showroom-image-link">
+
+                        <div class="showroom-image">
+
+                            <img
+                                src="Assets/showroom3.webp"
+                                alt="STACKLY New York technology showroom"
+                                loading="lazy"
+                            >
+
+                            <div class="showroom-image-overlay"></div>
+
+                            <span class="showroom-image-number">
+                                02 / 03
+                            </span>
+
+                            <div class="showroom-image-content">
+
+                                <span>UNITED STATES</span>
+
+                                <h3>New York <em>Soho.</em></h3>
+
+                            </div>
+
+                            <div class="showroom-image-arrow">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+                    <div class="showroom-details">
+
+                        <div class="showroom-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>NEW YORK, USA</span>
+                        </div>
+
+                        <p>
+                            Explore a curated technology environment
+                            designed for creative professionals,
+                            digital artists and performance enthusiasts.
+                        </p>
+
+                        <div class="showroom-meta">
+
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                BY APPOINTMENT
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-laptop"></i>
+                                CREATOR EXPERIENCE
+                            </span>
+
+                        </div>
+
+                        <a href="error.html" class="showroom-booking">
+                            BOOK AN APPOINTMENT
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <span></span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="showroom-card">
+
+                    <a href="error.html" class="showroom-image-link">
+
+                        <div class="showroom-image">
+
+                            <img
+                                src="Assets/showroom1.webp"
+                                alt="STACKLY London premium workstation showroom"
+                                loading="lazy"
+                            >
+
+                            <div class="showroom-image-overlay"></div>
+
+                            <span class="showroom-image-number">
+                                03 / 03
+                            </span>
+
+                            <div class="showroom-image-content">
+
+                                <span>UNITED KINGDOM</span>
+
+                                <h3>London <em>Mayfair.</em></h3>
+
+                            </div>
+
+                            <div class="showroom-image-arrow">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+                    <div class="showroom-details">
+
+                        <div class="showroom-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>LONDON, UK</span>
+                        </div>
+
+                        <p>
+                            Discover bespoke workstation solutions,
+                            sophisticated hardware selections and
+                            personalized consultation experiences.
+                        </p>
+
+                        <div class="showroom-meta">
+
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                BY APPOINTMENT
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-gem"></i>
+                                BESPOKE EXPERIENCE
+                            </span>
+
+                        </div>
+
+                        <a href="error.html" class="showroom-booking">
+                            BOOK AN APPOINTMENT
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <span></span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="showrooms-bottom">
+
+            <div class="showrooms-pagination">
+
+                <span class="showroom-current">01</span>
+
+                <div class="showroom-progress">
+                    <span id="showroomProgress"></span>
+                </div>
+
+                <span>03</span>
+
+            </div>
+
+
+            <div class="showrooms-bottom-caption">
+
+                <i class="fa-solid fa-gem"></i>
+
+                <span>PRECISION YOU CAN EXPERIENCE.</span>
+
+            </div>
+
+
+            <a href="error.html" class="showrooms-all-link">
+                DISCOVER MORE
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="stackly-location" id="stackly-location">
+
+    <div class="location-container">
+
+        <div class="location-heading">
+
+            <span class="location-eyebrow">
+                <span></span>
+                FIND YOUR WAY TO STACKLY
+                <span></span>
+            </span>
+
+            <h2>Visit Our <em>Salem Office.</em></h2>
+
+            <p>
+                Great technology starts with great conversations.
+                Find our location and connect with the Stackly team.
+            </p>
+
+        </div>
+
+
+        <div class="location-layout">
+
+            <div class="location-information">
+
+                <div class="location-card-header">
+
+                    <div class="location-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <span>STACKLY / HEADQUARTERS</span>
+
+                </div>
+
+
+                <div class="location-main-content">
+
+                    <span class="location-label">
+                        OUR SALEM LOCATION
+                    </span>
+
+                    <h3>
+                        A Place Where
+                        <em>Technology Connects.</em>
+                    </h3>
+
+                    <p>
+                        Visit our Salem office to connect with the
+                        Stackly team and explore our technology
+                        solutions and services.
+                    </p>
+
+                </div>
+
+
+                <div class="location-address">
+
+                    <div class="location-detail-icon">
+                        <i class="fa-solid fa-map-pin"></i>
+                    </div>
+
+                    <div>
+
+                        <span>OFFICE ADDRESS</span>
+
+                        <p>
+                            MMR Complex,<br>
+                            Periyakollappatty, Chinna Thirupathi,<br>
+                            Salem, Tamil Nadu – 636008,<br>
+                            India.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="location-detail-divider"></div>
+
+
+                <div class="location-detail-row">
+
+                    <div class="location-detail-icon location-gold">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+
+                    <div>
+                        <span>REGION</span>
+                        <strong>Salem, Tamil Nadu, India</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="location-detail-row">
+
+                    <div class="location-detail-icon location-teal">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+
+                    <div>
+                        <span>OFFICE</span>
+                        <strong>STACKLY Headquarters</strong>
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="location-note">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    <span>
+                        Please confirm office availability before visiting.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="location-map-area">
+
+                <div class="location-map-header">
+
+                    <div>
+                        <span>EXPLORE OUR LOCATION</span>
+                        <strong>Salem, Tamil Nadu</strong>
+                    </div>
+
+                    <div class="location-live-indicator">
+                        <span></span>
+                        MAP VIEW
+                    </div>
+
+                </div>
+
+
+                <div class="location-map-frame">
+
+                    <iframe
+                        src="https://www.google.com/maps?q=MMR%20Complex%2C%20Periyakollappatty%2C%20Chinna%20Thirupathi%2C%20Salem%2C%20Tamil%20Nadu%20636008&output=embed"
+                        title="STACKLY Salem office location on Google Maps"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        allowfullscreen
+                    ></iframe>
+
+
+                    <div class="location-map-badge">
+
+                        <div class="location-map-badge-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <div>
+                            <span>YOU CAN FIND US AT</span>
+                            <strong>STACKLY · SALEM</strong>
+                        </div>
+
+                    </div>
+
+
+                   
+
+                </div>
+
+
+                <div class="location-map-footer">
+
+                    <div>
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span>MMR COMPLEX, SALEM</span>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="location-bottom">
+
+            <span>CONNECT WITH STACKLY</span>
+
+            <div></div>
+
+            <span>SALEM · TAMIL NADU · INDIA</span>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="stackly-faq" id="faq">
+
+    <div class="faq-container">
+
+        <div class="faq-heading">
+
+            <span class="faq-eyebrow">
+                <span></span>
+                HERE TO MAKE THINGS CLEAR
+                <span></span>
+            </span>
+
+            <h2>Questions, <em>Answered.</em></h2>
+
+            <p>
+                Everything you need to know about STACKLY products,
+                custom configurations, orders and technical assistance.
+            </p>
+
+        </div>
+
+
+        <div class="faq-layout">
+
+            <div class="faq-intro">
+
+                <div class="faq-intro-card">
+
+                    <div class="faq-intro-top">
+                        <span>STACKLY / KNOWLEDGE DESK</span>
+                        <i class="fa-solid fa-circle-info"></i>
+                    </div>
+
+                    <div class="faq-intro-icon">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+
+                    <h3>
+                        The right answers.
+                        <em>The right direction.</em>
+                    </h3>
+
+                    <p>
+                        Choosing the right computer should feel simple.
+                        Explore our frequently asked questions or speak
+                        with our team for personalized guidance.
+                    </p>
+
+                    <div class="faq-intro-divider"></div>
+
+                    <div class="faq-intro-points">
+
+                        <div>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Product guidance</span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Build assistance</span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>After-sales support</span>
+                        </div>
+
+                    </div>
+
+                    <a href="error.html" class="faq-contact-button">
+                        ASK OUR EXPERTS
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <div class="faq-card-watermark">
+                        STACKLY
+                    </div>
+
+                </div>
+
+
+                <div class="faq-side-note">
+
+                    <span class="faq-note-icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </span>
+
+                    <div>
+                        <strong>Still exploring?</strong>
+                        <span>Find the right system for your needs.</span>
+                    </div>
+
+                    <a href="desktop.html" aria-label="Explore desktop computers">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-content">
+
+                <div class="faq-search-area">
+
+                    <div class="faq-search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="search"
+                            id="faqSearch"
+                            placeholder="Search your question..."
+                            autocomplete="off"
+                            aria-label="Search frequently asked questions"
+                        >
+
+                        <button
+                            type="button"
+                            id="faqSearchClear"
+                            aria-label="Clear search"
+                            hidden
+                        >
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+
+                    </div>
+
+                    <span class="faq-result-count" id="faqResultCount">
+                        08 QUESTIONS
+                    </span>
+
+                </div>
+
+
+                <div class="faq-categories" role="group" aria-label="Filter FAQ categories">
+
+                    <button type="button" class="faq-category active" data-category="all">
+                        ALL
+                    </button>
+
+                    <button type="button" class="faq-category" data-category="products">
+                        PRODUCTS
+                    </button>
+
+                    <button type="button" class="faq-category" data-category="orders">
+                        ORDERS
+                    </button>
+
+                    <button type="button" class="faq-category" data-category="support">
+                        SUPPORT
+                    </button>
+
+                </div>
+
+
+                <div class="faq-list" id="faqList">
+
+
+                    <article class="faq-item" data-category="products">
+
+                        <button
+                            type="button"
+                            class="faq-question"
+                            id="faq-question-1"
+                            aria-expanded="false"
+                            aria-controls="faq-answer-1"
+                        >
+
+                            <span class="faq-question-number">01</span>
+
+                            <span class="faq-question-text">
+                                How do I choose the right desktop for my needs?
+                            </span>
+
+                            <span class="faq-toggle">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+
+                        </button>
+
+                        <div
+                            class="faq-answer"
+                            id="faq-answer-1"
+                            role="region"
+                            aria-labelledby="faq-question-1"
+                        >
+                            <div class="faq-answer-inner">
+                                <p>
+                                    Start by identifying how you plan to use
+                                    your computer. Gaming, professional design,
+                                    video editing and everyday productivity all
+                                    have different hardware requirements.
+                                    Consider the processor, graphics card, RAM
+                                    and storage before choosing a system.
+                                    Our team can also help you select a
+                                    configuration that suits your workflow
+                                    and budget.
+                                </p>
+                            </div>
+                        </div>
+
+                    </article>
+
+
+                    <article class="faq-item" data-category="products">
+
+                        <button
+                            type="button"
+                            class="faq-question"
+                            id="faq-question-2"
+                            aria-expanded="false"
+                            aria-controls="faq-answer-2"
+                        >
+
+                            <span class="faq-question-number">02</span>
+
+                            <span class="faq-question-text">
+                                Can I request a custom-built PC configuration?
+                            </span>
+
+                            <span class="faq-toggle">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+
+                        </button>
+
+                        <div
+                            class="faq-answer"
+                            id="faq-answer-2"
+                            role="region"
+                            aria-labelledby="faq-question-2"
+                        >
+                            <div class="faq-answer-inner">
+                                <p>
+                                    Yes. You can contact our team with your
+                                    preferred processor, graphics card, memory,
+                                    storage and other requirements. We can
+                                    discuss suitable configurations based on
+                                    component compatibility, availability
+                                    and your intended usage.
+                                </p>
+
+                                <a href="#contact-form">
+                                    Discuss a custom build
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </article>
+
+
+                    <article class="faq-item" data-category="products">
+
+                        <button
+                            type="button"
+                            class="faq-question"
+                            id="faq-question-3"
+                            aria-expanded="false"
+                            aria-controls="faq-answer-3"
+                        >
+
+                            <span class="faq-question-number">03</span>
+
+                            <span class="faq-question-text">
+                                What is the difference between a gaming PC and a workstation?
+                            </span>
+
+                            <span class="faq-toggle">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+
+                        </button>
+
+                        <div
+                            class="faq-answer"
+                            id="faq-answer-3"
+                            role="region"
+                            aria-labelledby="faq-question-3"
+                        >
+                            <div class="faq-answer-inner">
+                                <p>
+                                    Gaming PCs are generally optimized for
+                                    graphics performance and high frame rates.
+                                    Workstations are designed around demanding
+                                    professional applications such as 3D
+                                    rendering, engineering, simulation and
+                                    content production. The best choice depends
+                                    on your software, workload and performance
+                                    priorities.
+                                </p>
+                            </div>
+                        </div>
+
+                    </article>
+
+
+                    <article class="faq-item" data-category="orders">
+
+                        <button
+                            type="button"
+                            class="faq-question"
+                            id="faq-question-4"
+                            aria-expanded="false"
+                            aria-controls="faq-answer-4"
+                        >
+
+                            <span class="faq-question-number">04</span>
+
+                            <span class="faq-question-text">
+                                How can I check my order status?
+                            </span>
+
+                            <span class="faq-toggle">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+
+                        </button>
+
+                        <div
+                            class="faq-answer"
+                            id="faq-answer-4"
+                            role="region"
+                            aria-labelledby="faq-question-4"
+                        >
+                            <div class="faq-answer-inner">
+                                <p>
+                                    Use the order tracking information provided
+                                    with your purchase confirmation. Your order
+                                    status and any available delivery updates
+                                    will depend on the order and shipping
+                                    arrangements. Contact our support team
+                                    for assistance with an order reference.
+                                </p>
+                            </div>
+                        </div>
+
+                    </article>
+
+
+                    <article class="faq-item" data-category="orders">
+
+                        <button
+                            type="button"
+                            class="faq-question"
+                            id="faq-question-5"
+                            aria-expanded="false"
+                            aria-controls="faq-answer-5"
+                        >
+
+                            <span class="faq-question-number">05</span>
+
+                            <span class="faq-question-text">
+                                What payment options are available?
+                            </span>
+
+                            <span class="faq-toggle">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+
+                        </button>
+
+                        <div
+                            class="faq-answer"
+                            id="faq-answer-5"
+                            role="region"
+                            aria-labelledby="faq-question-5"
+                        >
+                            <div class="faq-answer-inner">
+                                <p>
+                                    Available payment methods are displayed
+                                    during checkout. The options may vary
+                                    depending on the product, order value
+                                    and payment provider. Please review the
+                                    available methods before confirming
+                                    your purchase.
+                                </p>
+                            </div>
+                        </div>
+
+                    </article>
+
+
+                    <article class="faq-item" data-category="support">
+
+                        <button
+                            type="button"
+                            class="faq-question"
+                            id="faq-question-6"
+                            aria-expanded="false"
+                            aria-controls="faq-answer-6"
+                        >
+
+                            <span class="faq-question-number">06</span>
+
+                            <span class="faq-question-text">
+                                Does STACKLY provide product warranty and technical support?
+                            </span>
+
+                            <span class="faq-toggle">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+
+                        </button>
+
+                        <div
+                            class="faq-answer"
+                            id="faq-answer-6"
+                            role="region"
+                            aria-labelledby="faq-question-6"
+                        >
+                            <div class="faq-answer-inner">
+                                <p>
+                                    Warranty coverage depends on the product
+                                    and its manufacturer or applicable service
+                                    terms. Check the product listing and
+                                    warranty documentation for the exact
+                                    coverage period, conditions and support
+                                    process. Contact our team when you need
+                                    help understanding your warranty.
+                                </p>
+                            </div>
+                        </div>
+
+                    </article>
+
+
+                    <article class="faq-item" data-category="support">
+
+                        <button
+                            type="button"
+                            class="faq-question"
+                            id="faq-question-7"
+                            aria-expanded="false"
+                            aria-controls="faq-answer-7"
+                        >
+
+                            <span class="faq-question-number">07</span>
+
+                            <span class="faq-question-text">
+                                Can I upgrade my existing desktop or laptop?
+                            </span>
+
+                            <span class="faq-toggle">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+
+                        </button>
+
+                        <div
+                            class="faq-answer"
+                            id="faq-answer-7"
+                            role="region"
+                            aria-labelledby="faq-question-7"
+                        >
+                            <div class="faq-answer-inner">
+                                <p>
+                                    Many computers support component upgrades,
+                                    such as additional RAM or storage.
+                                    Compatibility depends on the model,
+                                    motherboard, available slots and
+                                    manufacturer restrictions. Share your
+                                    system model and intended upgrade with
+                                    our team before purchasing components.
+                                </p>
+                            </div>
+                        </div>
+
+                    </article>
+
+
+                    <article class="faq-item" data-category="support">
+
+                        <button
+                            type="button"
+                            class="faq-question"
+                            id="faq-question-8"
+                            aria-expanded="false"
+                            aria-controls="faq-answer-8"
+                        >
+
+                            <span class="faq-question-number">08</span>
+
+                            <span class="faq-question-text">
+                                How can I contact STACKLY for additional assistance?
+                            </span>
+
+                            <span class="faq-toggle">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+
+                        </button>
+
+                        <div
+                            class="faq-answer"
+                            id="faq-answer-8"
+                            role="region"
+                            aria-labelledby="faq-question-8"
+                        >
+                            <div class="faq-answer-inner">
+                                <p>
+                                    You can reach our team through the contact
+                                    form on this page. Select the appropriate
+                                    enquiry type, provide your product details
+                                    and describe the assistance you need.
+                                    Our team can then review your enquiry and
+                                    guide you on the next steps.
+                                </p>
+
+                                <a href="error.html">
+                                    Contact STACKLY
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+                <div class="faq-no-results" id="faqNoResults" hidden>
+
+                    <div>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+
+                    <h3>No matching questions found.</h3>
+
+                    <p>
+                        Try another search term or select a different category.
+                    </p>
+
+                    <button type="button" id="faqResetSearch">
+                        CLEAR SEARCH
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="faq-bottom-note">
+
+                    <span>CAN'T FIND WHAT YOU'RE LOOKING FOR?</span>
+
+                    <a href="error.html">
+                        TALK TO OUR TEAM
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-footer-line">
+
+            <span>CLARITY IN EVERY CONNECTION.</span>
+
+            <div></div>
+
+            <span>THE STACKLY STANDARD.</span>
+
+        </div>
+
+    </div>
+
+</section>
+<footer class="stackly-footer" id="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-grid">
+
+           
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="footer-logo">
+                    <img src="Assets/blacklogo.webp" alt="STACKLY Logo">
+                </a>
+
+                <p class="footer-description">
+                    Hand-crafting the most powerful personal computers
+                    on Earth. Designed for creators, innovators and
+                    professionals who demand extraordinary performance.
+                </p>
+
+                <div class="footer-socials">
+
+                    <a href="error.html" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="error.html" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="error.html" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                    <a href="error.html" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h3>QUICK LINKS</h3>
+
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="about.html">About Us</a></li>
+
+                    <li><a href="desktop.html">Desktop</a></li>
+
+                    <li><a href="laptop.html">Laptops</a></li>
+
+                    <li><a href="cart.html">Cart</a></li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+
+          
+
+            <div class="footer-column">
+
+                <h3>SUPPORT</h3>
+
+                <ul>
+
+                    <li><a href="error.html">Concierge Desk</a></li>
+
+                    <li><a href="error.html">Warranty Registry</a></li>
+
+                    <li><a href="error.html">Repairs</a></li>
+
+                    <li><a href="error.html">Knowledge Base</a></li>
+
+                    <li><a href="error.html">Order Tracking</a></li>
+
+                    <li><a href="error.html">Technical Support</a></li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>COMPANY</h3>
+
+                <ul>
+
+                    <li><a href="error.html">Our Story</a></li>
+
+                    <li><a href="error.html">Sustainability</a></li>
+
+                    <li><a href="error.html">Careers</a></li>
+
+                    <li><a href="error.html">Press</a></li>
+
+                    <li><a href="error.html">Privacy Policy</a></li>
+
+                    <li><a href="error.html">Terms of Service</a></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="footer-copyright">
+                <span>&copy; 2026 STACKLY.</span>
+                <span>ALL RIGHTS RESERVED.</span>
+            </div>
+
+            <div class="footer-bottom-center">
+                <span class="footer-status-dot"></span>
+                CRAFTED FOR THE EXTRAORDINARY
+            </div>
+
+            <a href="#home" class="footer-back-top">
+                BACK TO TOP
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+    </main>
+
+    <canvas id="stacklySmokeCanvas"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.9.3/confetti.browser.min.js"></script>
+     <script src="https://unpkg.com/lenis@1.3.27/dist/lenis.min.js"></script>
+     <script src="lenis.js"></script>
+    <script src="loader.js"></script>
+    <script src="nav.js"></script>
+    <script src="cursor.js"></script>
+    <script src="contact.js"></script>
+
+    </body>
+    </html>

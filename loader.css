@@ -1,0 +1,337 @@
+.stackly-loader {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at center, #211c28 0%, #100f14 48%, #050505 100%);
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.65s ease, visibility 0.65s ease;
+}
+
+.stackly-loader.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.stackly-loader::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 45px 45px;
+    mask-image: radial-gradient(ellipse at center, black, transparent 75%);
+    pointer-events: none;
+}
+
+.loader-background-glow {
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(
+        circle,
+        rgba(152, 114, 181, 0.19),
+        rgba(196, 160, 91, 0.08) 42%,
+        transparent 70%
+    );
+    border-radius: 50%;
+    filter: blur(35px);
+    animation: loaderGlow 3s ease-in-out infinite alternate;
+}
+
+.loader-content {
+    position: relative;
+    z-index: 2;
+    width: min(700px, 94%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.loader-logo-container {
+    position: relative;
+    width: min(560px, 90vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.loader-logo {
+    position: relative;
+    z-index: 3;
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    mix-blend-mode: screen;
+    opacity: 0;
+    transform: scale(0.85) translateY(20px);
+    filter: blur(12px);
+}
+
+.loader-logo-glow {
+    position: absolute;
+    width: 80%;
+    height: 75%;
+    left: 10%;
+    top: 12%;
+    background: radial-gradient(
+        ellipse,
+        rgba(152, 114, 181, 0.24),
+        transparent 70%
+    );
+    filter: blur(30px);
+    animation: logoGlow 2s ease-in-out infinite alternate;
+}
+
+.loader-logo-scan {
+    position: absolute;
+    z-index: 4;
+    top: -20%;
+    left: -100%;
+    width: 45%;
+    height: 140%;
+    transform: skewX(-22deg);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.22),
+        transparent
+    );
+    pointer-events: none;
+    animation: logoScan 2.4s ease-in-out 0.8s infinite;
+}
+
+.loader-orbit {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.orbit-one {
+    width: min(650px, 96vw);
+    height: 260px;
+    border: 1px solid rgba(152, 114, 181, 0.28);
+    transform: translate(-50%, -50%) rotate(-17deg);
+}
+
+.orbit-two {
+    width: min(600px, 90vw);
+    height: 220px;
+    border: 1px solid rgba(196, 160, 91, 0.23);
+    transform: translate(-50%, -50%) rotate(17deg);
+}
+
+.orbit-three {
+    width: min(690px, 100vw);
+    height: 290px;
+    border: 1px dashed rgba(255,255,255,0.09);
+    transform: translate(-50%, -50%);
+}
+
+.orbit-point {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: #c4a05b;
+    border-radius: 50%;
+    top: -5px;
+    left: 50%;
+    box-shadow: 0 0 15px #c4a05b;
+}
+
+.orbit-two .orbit-point {
+    background: #9872b5;
+    box-shadow: 0 0 15px #9872b5;
+    top: auto;
+    bottom: -5px;
+}
+
+.loader-brand-caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    margin-top: 2px;
+    color: #c4a05b;
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+.caption-line {
+    width: 35px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #c4a05b);
+}
+
+.caption-line:last-child {
+    transform: rotate(180deg);
+}
+
+.loader-tagline {
+    margin-top: 13px;
+    color: rgba(255,255,255,0.54);
+    font-family: "DM Sans", sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 500;
+}
+
+.loader-progress-container {
+    width: min(280px, 70vw);
+    margin-top: 38px;
+}
+
+.loader-progress-track {
+    width: 100%;
+    height: 3px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.12);
+    overflow: hidden;
+}
+
+.loader-progress-fill {
+    width: 0%;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(
+        90deg,
+        #9872b5,
+        #c4a05b,
+        #ffffff
+    );
+    box-shadow: 0 0 12px rgba(196,160,91,0.7);
+}
+
+.loader-progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    color: rgba(255,255,255,0.58);
+    font-family: "DM Sans", sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+#loaderPercentage {
+    color: #c4a05b;
+}
+
+.loader-bottom-text {
+    position: absolute;
+    bottom: 28px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 4px;
+}
+
+.loader-bottom-text span {
+    color: #9872b5;
+    font-weight: 400;
+}
+
+@keyframes loaderGlow {
+    from {
+        transform: scale(0.85);
+        opacity: 0.55;
+    }
+    to {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+@keyframes logoGlow {
+    from {
+        transform: scale(0.85);
+        opacity: 0.4;
+    }
+    to {
+        transform: scale(1.15);
+        opacity: 0.9;
+    }
+}
+
+@keyframes logoScan {
+    0% {
+        left: -100%;
+    }
+    65%, 100% {
+        left: 150%;
+    }
+}
+
+@media (max-width: 768px) {
+    .loader-logo-container {
+        width: 94vw;
+    }
+
+    .orbit-one {
+        height: 190px;
+    }
+
+    .orbit-two {
+        height: 165px;
+    }
+
+    .orbit-three {
+        height: 220px;
+    }
+
+    .loader-brand-caption {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .loader-tagline {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .loader-progress-container {
+        margin-top: 28px;
+    }
+}
+
+@media (max-width: 380px) {
+    .loader-brand-caption {
+        gap: 7px;
+        font-size: 8px;
+    }
+
+    .caption-line {
+        width: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .loader-background-glow,
+    .loader-logo-glow,
+    .loader-logo-scan {
+        animation: none;
+    }
+}
